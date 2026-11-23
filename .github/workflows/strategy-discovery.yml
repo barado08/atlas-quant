@@ -1,10 +1,5 @@
 name: ATLAS QUANT — Autonomous multi-market strategy discovery
 on:
-  push:
-    paths:
-      - 'scripts/strategy_discovery.py'
-      - 'scripts/paper_tracker.py'
-      - '.github/workflows/strategy-discovery.yml'
   workflow_dispatch:
   schedule:
     - cron: '25 5 * * *'
@@ -41,7 +36,22 @@ jobs:
           git add -f reports/discovery_latest.json reports/discovery_summary.csv paper/state.json paper/status.json
           if ! git diff --cached --quiet; then
             git commit -m "data: persist daily discovery report [skip ci]"
-            git push origin HEAD:main
+            for attempt in 1 2 3; do
+              if ! git pull --rebase origin main; then
+                git rebase --abort || true
+                echo "REBASE_CONFLICT: results remain available as artifact" >&2
+                exit 1
+              fi
+              if git push origin HEAD:main; then
+                echo "DISCOVERY_PERSISTED"
+                break
+              fi
+              if [ "$attempt" -eq 3 ]; then
+                echo "PERSIST_FAILED: results remain available as artifact" >&2
+                exit 1
+              fi
+              sleep $((attempt * 3))
+            done
           fi
       - name: Archive full JSON and readable CSV, even on failed or partial scans
         if: always()
