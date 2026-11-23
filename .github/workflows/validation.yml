@@ -1,4 +1,4 @@
-name: ATLAS QUANT — tests and real market connectivity
+name: ATLAS QUANT — tests, real data and historical baselines
 on:
   push:
   workflow_dispatch:
@@ -15,7 +15,7 @@ jobs:
       - run: python -m pip install -r requirements.txt
       - run: python -m pytest -q
       - run: python -m compileall -q app.py trading_ai scripts
-  online-market-smoke:
+  real-market-backtests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -26,3 +26,12 @@ jobs:
       - run: python -m pip install -r requirements.txt
       - name: Fetch REAL crypto, ETF and FX candles (no simulated fallback)
         run: python scripts/online_smoke.py
+      - name: Fixed-strategy, out-of-sample backtests on REAL historical prices
+        run: python scripts/real_backtests.py
+      - name: Save audit JSON (even on a failed fetch)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: atlas-quant-real-backtest-report
+          path: reports/baseline_real_oos.json
+          if-no-files-found: warn
