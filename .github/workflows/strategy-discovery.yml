@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 'scripts/strategy_discovery.py'
+      - 'scripts/paper_tracker.py'
       - '.github/workflows/strategy-discovery.yml'
   workflow_dispatch:
   schedule:
@@ -30,12 +31,14 @@ jobs:
         env:
           MAX_ASSETS: '40'
         run: python scripts/strategy_discovery.py --max-assets "$MAX_ASSETS"
-      - name: Persist latest research report for prospective paper tracking
+      - name: Enroll qualified research candidates into forward-only paper trading
+        run: python scripts/paper_tracker.py
+      - name: Persist latest research report and forward paper state
         if: success()
         run: |
           git config user.name "atlas-quant-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f reports/discovery_latest.json reports/discovery_summary.csv
+          git add -f reports/discovery_latest.json reports/discovery_summary.csv paper/state.json paper/status.json
           if ! git diff --cached --quiet; then
             git commit -m "data: persist weekly discovery report [skip ci]"
             git push origin HEAD:main
