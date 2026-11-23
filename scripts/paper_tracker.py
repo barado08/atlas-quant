@@ -189,12 +189,19 @@ def main():
     parser.add_argument('--status',default=str(DEFAULT_AUDIT))
     args=parser.parse_args()
     report_path=Path(args.report);state_path=Path(args.state);status_path=Path(args.status)
-    if not report_path.exists():
+    shard_dir=ROOT/'reports'/'shards'
+    sources=([report_path] if report_path.exists() else []) + sorted(shard_dir.glob('slot_*.json'))
+    if not sources:
         print('NO_DISCOVERY_REPORT: awaiting first successful scheduled report; no paper positions created.')
         return 0
-    report=json.loads(report_path.read_text(encoding='utf-8'))
+    reports=[json.loads(path.read_text(encoding='utf-8')) for path in sources]
     state=json.loads(state_path.read_text(encoding='utf-8')) if state_path.exists() else fresh_state()
-    candidates=eligible_from_report(report)
+    # Merge research candidates across all 12 rotating market slices.
+    candidates_map={}
+    for report in reports:
+        for key,sym,cfg in eligible_from_report(report):
+            candidates_map[key]=(sym,cfg)
+    candidates=[(key,sym,cfg) for key,(sym,cfg) in sorted(candidates_map.items())]
     now=datetime.now(timezone.utc).isoformat()
     # Keep existing enrolled accounts frozen even when future discovery no longer selects them.
     known={key:(a['symbol'],Config(**a['params'])) for key,a in state['accounts'].items()}
@@ -220,7 +227,7 @@ def main():
             errors.append({'id':key,'symbol':sym,'error':f'{type(e).__name__}: {e}'})
             print('PAPER_DATA_ERROR',sym,str(e),flush=True)
     state['errors']=errors;state['last_run_utc']=now
-    audit={'as_of_utc':now,'discovery_report_date':report.get('date_utc'),
+    audit={'as_of_utc':now,'discovery_report_date':max((report.get('date_utc') or '' for report in reports),default=''),
         'candidate_count':len(candidates),'tracked_accounts':len(state['accounts']),
         'errors':errors,'paper_only':True,
         'cannot_certify':'No automated live trading approval. Need 90+ days and 30+ real prospective closed trades per strategy, plus independent review of execution, costs, multiple testing, benchmarks.',
