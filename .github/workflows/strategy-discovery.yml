@@ -7,7 +7,7 @@ on:
       - '.github/workflows/strategy-discovery.yml'
   workflow_dispatch:
   schedule:
-    - cron: '25 5 * * 1'
+    - cron: '25 5 * * *'
 permissions:
   contents: write
 jobs:
@@ -40,14 +40,14 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -f reports/discovery_latest.json reports/discovery_summary.csv paper/state.json paper/status.json
           if ! git diff --cached --quiet; then
-            git commit -m "data: persist weekly discovery report [skip ci]"
+            git commit -m "data: persist daily discovery report [skip ci]"
             git push origin HEAD:main
           fi
       - name: Archive full JSON and readable CSV, even on failed or partial scans
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: atlas-weekly-strategy-discovery
+          name: atlas-daily-strategy-discovery
           path: |
             reports/discovery_latest.json
             reports/discovery_summary.csv
