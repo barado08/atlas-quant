@@ -8,7 +8,7 @@ on:
   schedule:
     - cron: '25 5 * * 1'
 permissions:
-  contents: read
+  contents: write
 jobs:
   discovery:
     runs-on: ubuntu-latest
@@ -30,6 +30,16 @@ jobs:
         env:
           MAX_ASSETS: '40'
         run: python scripts/strategy_discovery.py --max-assets "$MAX_ASSETS"
+      - name: Persist latest research report for prospective paper tracking
+        if: success()
+        run: |
+          git config user.name "atlas-quant-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f reports/discovery_latest.json reports/discovery_summary.csv
+          if ! git diff --cached --quiet; then
+            git commit -m "data: persist weekly discovery report [skip ci]"
+            git push origin HEAD:main
+          fi
       - name: Archive full JSON and readable CSV, even on failed or partial scans
         if: always()
         uses: actions/upload-artifact@v4
