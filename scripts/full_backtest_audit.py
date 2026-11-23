@@ -155,6 +155,28 @@ def main():
         'benchmark_100pct_buyhold_pct','benchmark_20pct_buyhold_pct','excess_vs_20pct_buyhold_pct']
     with CSV.open('w',newline='',encoding='utf-8') as fp:
         writer=csv.DictWriter(fp,fieldnames=keys,extrasaction='ignore');writer.writeheader();writer.writerows(report['rows'])
+    # Compact audit summaries printed in immutable GitHub Actions job logs.
+    for strategy in STRATEGIES:
+        for multiple in [1,2,3,5]:
+            v=[x for x in report['rows'] if x['strategy']==strategy and x['period']=='OOS' and x['cost_multiplier']==multiple]
+            if not v:continue
+            summary={'strategy':strategy,'cost_x':multiple,
+                'markets':len(v),
+                'median_oos_return_pct':round(statistics.median(x['total_return_pct'] for x in v),3),
+                'positive_markets':sum(x['total_return_pct']>0 for x in v),
+                'beats_20pct_passive':sum(x['excess_vs_20pct_buyhold_pct']>0 for x in v),
+                'worst_oos_return_pct':round(min(x['total_return_pct'] for x in v),3),
+                'best_oos_return_pct':round(max(x['total_return_pct'] for x in v),3)}
+            print('COST_STRESS',json.dumps(summary,ensure_ascii=False),flush=True)
+    for strategy in STRATEGIES:
+        v=[x for x in report['rolling_windows'] if x['strategy']==strategy]
+        for win in [1,2,3]:
+            w=[x for x in v if x['window']==win]
+            if w:print('REGIME_WINDOW',json.dumps({
+                'strategy':strategy,'window':win,
+                'median_return_pct':round(statistics.median(x['total_return_pct'] for x in w),3),
+                'positive_markets':sum(x['total_return_pct']>0 for x in w),
+                'markets':len(w)},ensure_ascii=False),flush=True)
     print('AGGREGATE',json.dumps(report['aggregate'],ensure_ascii=False),flush=True)
     print('SUMMARY',json.dumps(report['summary']),flush=True)
     print('REPORTS',RESULT,CSV,flush=True)
