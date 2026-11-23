@@ -1,0 +1,41 @@
+name: ATLAS QUANT — Market pulse every 5 minutes
+on:
+  push:
+    paths:
+      - 'scripts/market_pulse.py'
+      - 'tests/test_market_pulse.py'
+      - '.github/workflows/market-pulse.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '7 * * * *'
+    - cron: '2,12,17,22,27,32,37,42,47,52,57 * * * *'
+permissions:
+  contents: write
+concurrency:
+  group: atlas-market-pulse
+  cancel-in-progress: false
+jobs:
+  public-crypto-quotes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch fresh crypto price snapshot using only free public endpoints
+        run: python scripts/market_pulse.py
+      - name: Persist one visible snapshot every hour (not 288 commits/day)
+        if: github.event.schedule == '7 * * * *' || github.event_name != 'schedule'
+        shell: bash
+        run: |
+          git config user.name "atlas-quant-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f monitor/latest.json
+          if ! git diff --cached --quiet; then
+            git commit -m "data: update hourly crypto market pulse [skip ci]"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
