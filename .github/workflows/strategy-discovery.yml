@@ -1,0 +1,36 @@
+name: ATLAS QUANT — Autonomous multi-market strategy discovery
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '25 5 * * 1'
+permissions:
+  contents: read
+jobs:
+  discovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    concurrency:
+      group: atlas-strategy-discovery
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install research dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Check unit tests before scanning
+        run: python -m pytest -q
+      - name: Search 40 instruments and 12 preset strategies each, using real daily historical data
+        run: python scripts/strategy_discovery.py --max-assets 40
+      - name: Archive full JSON and readable CSV, even on failed or partial scans
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: atlas-weekly-strategy-discovery
+          path: |
+            reports/discovery_latest.json
+            reports/discovery_summary.csv
+          retention-days: 90
+          if-no-files-found: warn
