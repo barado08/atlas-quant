@@ -26,9 +26,9 @@ jobs:
         run: python -m pip install -r requirements.txt
       - name: Check unit tests before scanning
         run: python -m pytest -q
-      - name: Search diverse instruments and 12 preset strategies each, using real daily historical data
+      - name: Search full broad market universe and 12 preset strategies each, using real daily historical data
         env:
-          MAX_ASSETS: ${{ github.event_name == 'push' && '12' || '40' }}
+          MAX_ASSETS: '40'
         run: python scripts/strategy_discovery.py --max-assets "$MAX_ASSETS"
       - name: Archive full JSON and readable CSV, even on failed or partial scans
         if: always()
