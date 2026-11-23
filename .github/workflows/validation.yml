@@ -4,6 +4,7 @@ on:
     paths-ignore:
       - 'reports/**'
       - 'paper/**'
+      - 'monitor/**'
   workflow_dispatch:
   pull_request:
 jobs:
