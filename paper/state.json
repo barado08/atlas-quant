@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "created_utc": "2026-11-23T17:08:45.400952+00:00",
+  "accounts": {
+    "f45f73d7757eb91d": {
+      "symbol": "AVAX-USD",
+      "strategy": "Ruptura Donchian",
+      "params": {
+        "initial_cash": 10000,
+        "risk_pct": 1,
+        "max_allocation_pct": 20,
+        "fee_bps": 10,
+        "slippage_bps": 5,
+        "stop_atr": 2.0,
+        "reward_risk": 2.0,
+        "max_positions": 5,
+        "strategy": "Ruptura Donchian",
+        "fast": 20,
+        "slow": 100,
+        "breakout": 20
+      },
+      "enrolled_utc": "2026-11-23T17:08:45.401042+00:00",
+      "last_processed": "2026-11-22",
+      "initial_cash": 10000,
+      "cash": 10000,
+      "position": null,
+      "pending": null,
+      "last_close": 6.675818920135498,
+      "equity_history": [],
+      "trades": [],
+      "events": [],
+      "updated_utc": "2026-11-23T17:08:45.401042+00:00"
+    }
+  },
+  "errors": [],
+  "last_run_utc": "2026-11-23T17:08:45.401042+00:00"
+}
