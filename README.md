@@ -47,5 +47,18 @@ Este repositorio es actualmente **público**. Antes de crear un SaaS comercial p
 Instala Python 3.12, `python -m pip install -r requirements.txt` y `streamlit run app.py`.
 Para interpretación de imágenes, instala Ollama y ejecuta `ollama pull qwen2.5vl:3b`.
 
+## Búsqueda global automatizada 24/7 — cobertura real y límites
+
+- **Rotación cada 5 minutos, best effort:** [global-rotation.yml](.github/workflows/global-rotation.yml) elige un lote de 1/12 del catálogo mundial y ejecuta backtests reales con doce configuraciones por activo. Con 258 símbolos, el ciclo completo **intenta** repetirse una vez por hora. Los informes quedan en `reports/shards/slot_XX.json` y en los artifacts de Actions.
+- **Barrido mundial diario:** [strategy-discovery.yml](.github/workflows/strategy-discovery.yml) vuelve a revisar los 258 símbolos del catálogo, agrega candidatos y los incorpora a cuentas prospectivas simuladas; jamás envía órdenes reales.
+- **Precios de criptomonedas:** [market-pulse.yml](.github/workflows/market-pulse.yml) comprueba doce cotizaciones cada cinco minutos con proveedores públicos. No equivale a datos de mercado regulado para acciones/Forex/futuros.
+- **Paper trading:** [paper-trading.yml](.github/workflows/paper-trading.yml) procesa velas completas una vez al día, conservando cuentas y operaciones desde su inscripción, sin reconstruir rendimientos pasados.
+- **Cobertura internacional de investigación:** criptomonedas, Forex, ETF de índices, acciones de EE. UU., Europa, Asia y Latinoamérica, renta fija, metales, inmobiliario y contratos de materias primas.
+
+### Lo que no se puede prometer
+
+Un catálogo de 258 símbolos **no contiene todos los instrumentos cotizados del mundo**. Yahoo Finance/yfinance puede no servir algún ticker, tener latencia, retirar datos o imponer límites. El mercado tradicional no cotiza 24/7. El escáner analiza datos diarios y repite cálculos, pero NO proporciona cotizaciones de todos los activos cada cinco minutos ni inventa nuevas familias de algoritmos automáticamente.
+
+GitHub Actions es un programador **sin SLA**: puede retrasar, omitir o deshabilitar ejecuciones. La alta frecuencia incrementa uso de recursos, logs y tamaño de Git; hay que vigilar cuotas y políticas de uso de fuentes. Si se requiere operativa profesional continua y licencias globales, hará falta un servidor dedicado y proveedores de datos autorizados. Ningún resultado favorable por backtest sustituye verificación prospectiva independiente.
 ## Objetivo de validación
 Reunir backtests fuera de muestra de múltiples activos, periodos y regímenes, comprobar sensibilidad a costes, controlar sesgos, fijar criterios de aceptación antes de analizar resultados y completar paper trading prospectivo documentado. Ninguna operación real hasta que el sistema haya pasado la validación correspondiente.
