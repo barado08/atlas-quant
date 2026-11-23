@@ -1,6 +1,9 @@
 name: ATLAS QUANT — tests, real data and historical baselines
 on:
   push:
+    paths-ignore:
+      - 'reports/**'
+      - 'paper/**'
   workflow_dispatch:
   pull_request:
 jobs:
