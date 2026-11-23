@@ -25,6 +25,7 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 from trading_ai.data import fetch
 from trading_ai.engine import Config, backtest, benchmark
+from scripts.global_universe import UNIVERSE as WORLD_UNIVERSE, catalog as global_catalog
 
 # Broad scope; yfinance accessibility and data licensing differ by instrument.
 UNIVERSE={
@@ -157,13 +158,21 @@ def search_asset(d,symbol,category):
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--max-assets',type=int,default=40)
+    parser.add_argument('--universe',choices=['legacy','global'],default='legacy')
+    parser.add_argument('--shard-count',type=int,default=1)
+    parser.add_argument('--shard-index',type=int,default=0)
     parser.add_argument('--start',default='2018-01-01')
     parser.add_argument('--end',default=(date.today()+timedelta(days=1)).isoformat())
     parser.add_argument('--output',default='reports/discovery_latest.json')
     args=parser.parse_args()
-    assert 1<=args.max_assets<=100
+    assert 1<=args.max_assets<=1000
+    assert 1<=args.shard_count<=96
+    assert 0<=args.shard_index<args.shard_count
     out=ROOT/args.output
-    selected=[(group,t) for group,tickers in UNIVERSE.items() for t in tickers][:args.max_assets]
+    population=global_catalog() if args.universe=='global' else [(group,t) for group,tickers in UNIVERSE.items() for t in tickers]
+    selected=([v for idx,v in enumerate(population) if idx%args.shard_count==args.shard_index]
+              if args.shard_count>1 else population[:args.max_assets])
+    if not selected:raise SystemExit('Empty shard configuration')
     report={
       'date_utc':datetime.now(timezone.utc).isoformat(),
       'commit_sha':os.environ.get('GITHUB_SHA'),
@@ -180,7 +189,12 @@ def main():
         'Historical costs are simulated; no external account and NO actual trading.',
         'Data sources may fail, have gaps or be rate-limited; failed symbols excluded and explicitly counted.'
       ],
-      'universe':{k:v for k,v in UNIVERSE.items()},
+      'universe':{k:v for k,v in (WORLD_UNIVERSE if args.universe=='global' else UNIVERSE).items()},
+      'coverage':{'catalog_size':len(population),'shard_count':args.shard_count,
+                  'shard_index':args.shard_index,
+                  'requested_in_shard':len(selected),
+                  'scheduled':'best effort; not a real-time exchange feed',
+                  'no_complete_world_claim':True},
       'candidates_per_asset':len(CANDIDATES),
       'results':[],'failures':[]}
     for ix,(group,symbol) in enumerate(selected,1):
@@ -205,7 +219,8 @@ def main():
     }
     out.parent.mkdir(parents=True,exist_ok=True)
     out.write_text(json.dumps(finite(report),ensure_ascii=False,indent=2),encoding='utf-8')
-    with (out.parent/'discovery_summary.csv').open('w',encoding='utf-8',newline='') as f:
+    csv_path=out.with_suffix('.csv') if args.universe=='global' else out.parent/'discovery_summary.csv'
+    with csv_path.open('w',encoding='utf-8',newline='') as f:
         cols=['category','symbol','status','strategy','validation_pct','holdout_pct','holdout_trades','oos_excess_passive_pct','oos_drawdown_pct']
         writer=csv.DictWriter(f,fieldnames=cols);writer.writeheader()
         for r in report['results']:
