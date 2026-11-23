@@ -1,0 +1,68 @@
+name: ATLAS QUANT — Global research rotation 5m
+on:
+  push:
+    paths:
+      - '.github/workflows/global-rotation.yml'
+      - 'scripts/rotate_discovery.py'
+      - 'scripts/global_universe.py'
+  workflow_dispatch:
+  schedule:
+    - cron: '*/5 * * * *'
+permissions:
+  contents: write
+concurrency:
+  group: atlas-global-rotation
+  cancel-in-progress: false
+jobs:
+  rotate-global-universe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install quant dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Validate scanner on source changes
+        if: github.event_name != 'schedule'
+        run: python -m pytest -q
+      - name: Backtest next geographically diversified shard
+        run: python scripts/rotate_discovery.py --shards 12
+      - name: Archive current scan, including failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: atlas-world-shard-${{ github.run_id }}
+          path: reports/shards/*
+          if-no-files-found: warn
+          retention-days: 3
+      - name: Persist shard results without force pushing
+        if: success()
+        shell: bash
+        run: |
+          git config user.name "atlas-quant-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f reports/shards/*.json reports/shards/*.csv
+          if git diff --cached --quiet; then
+            echo "NO_CHANGES_TO_PERSIST"
+            exit 0
+          fi
+          git commit -m "data: global rotating research shard [skip ci]"
+          for attempt in 1 2 3 4; do
+            if ! git pull --rebase origin main; then
+              git rebase --abort || true
+              echo "REBASE_CONFLICT: shard report saved as Actions artifact; manual reconciliation required" >&2
+              exit 1
+            fi
+            if git push origin HEAD:main; then
+              echo "WORLD_RESEARCH_PERSISTED on attempt $attempt"
+              exit 0
+            fi
+            if [ "$attempt" -eq 4 ]; then
+              echo "PERSIST_FAILED: concurrent updates; report available as Actions artifact" >&2
+              exit 1
+            fi
+            sleep $((attempt * 2))
+          done
