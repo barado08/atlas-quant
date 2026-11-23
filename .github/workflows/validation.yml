@@ -28,10 +28,15 @@ jobs:
         run: python scripts/online_smoke.py
       - name: Fixed-strategy, out-of-sample backtests on REAL historical prices
         run: python scripts/real_backtests.py
+      - name: Comprehensive market, strategy and cost-stress audit
+        run: python scripts/full_backtest_audit.py
       - name: Save audit JSON (even on a failed fetch)
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: atlas-quant-real-backtest-report
-          path: reports/baseline_real_oos.json
+          path: |
+            reports/baseline_real_oos.json
+            reports/full_backtest_audit.json
+            reports/full_backtest_rows.csv
           if-no-files-found: warn
