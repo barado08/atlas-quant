@@ -16,6 +16,19 @@ Este repositorio contiene el código fuente de ATLAS QUANT v0.3, configuración 
    ```
 4. Abre el puerto 8501 desde **Ports** y mantenlo privado.
 
+### Ejecución automática
+
+| Componente | Frecuencia | Función |
+|---|---|---|
+| [Market pulse](.github/workflows/market-pulse.yml) | Intento cada 5 minutos, 24/7 | Consulta criptomonedas con proveedores públicos. Registro en GitHub Actions y un snapshot horario en `monitor/latest.json`. **No opera.** |
+| [Strategy discovery](.github/workflows/strategy-discovery.yml) | Diariamente | Hasta 480 configuraciones en 40 activos de múltiples mercados, con validación histórica. |
+| [Forward paper trading](.github/workflows/paper-trading.yml) | Diariamente | Revisa nuevas velas y actualiza operaciones ficticias, sin órdenes reales. |
+| [Validation](.github/workflows/validation.yml) | En cada cambio de código | Tests y auditoría con datos reales. |
+
+**Dónde revisar:** `monitor/latest.json` (último precio archivado), `paper/status.json` (cuentas simuladas) y GitHub Actions (registros y errores).
+
+**Limitaciones:** GitHub Actions ofrece cron *best effort*, no un servidor garantizado 24/7. Puede retrasar o descartar ejecuciones, o suspender tareas programadas por inactividad. Los proveedores pueden limitar peticiones. El pulso de cinco minutos cubre **criptomonedas**, no mercados Forex/bolsas fuera de su horario. Las señales swing y el paper trading se calculan con velas completadas.
+Este repositorio es actualmente **público**. Antes de crear un SaaS comercial propietario, revisar visibilidad, propiedad intelectual y el coste de los runners para repositorios privados.
 ### Funciones
 - Descarga de históricos diarios de criptomonedas, acciones/ETF y Forex mediante yfinance, o CSV OHLC.
 - Motor con tres estrategias swing, señales al cierre, órdenes a la apertura siguiente, stops/targets/gaps, costes y cartera con capital compartido.
