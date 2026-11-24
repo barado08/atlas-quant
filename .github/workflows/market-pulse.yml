@@ -7,8 +7,8 @@ on:
       - '.github/workflows/market-pulse.yml'
   workflow_dispatch:
   schedule:
-    - cron: '7 * * * *'
-    - cron: '2,12,17,22,27,32,37,42,47,52,57 * * * *'
+    - cron: '6,11,16,21,26,31,36,41,46,51,56 * * * *'
+    - cron: '1 * * * *'
 permissions:
   contents: write
 concurrency:
@@ -28,7 +28,7 @@ jobs:
       - name: Fetch fresh crypto price snapshot using only free public endpoints
         run: python scripts/market_pulse.py
       - name: Persist one visible snapshot every hour (not 288 commits/day)
-        if: github.event.schedule == '7 * * * *' || github.event_name != 'schedule'
+        if: github.event.schedule == '1 * * * *' || github.event_name != 'schedule'
         shell: bash
         run: |
           git config user.name "atlas-quant-bot"
