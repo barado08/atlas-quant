@@ -5,6 +5,9 @@ on:
       - '.github/workflows/global-rotation.yml'
       - 'scripts/rotate_discovery.py'
       - 'scripts/global_universe.py'
+      - 'scripts/refresh_paper_if_due.py'
+      - 'scripts/paper_tracker.py'
+      - 'tests/test_paper_refresh.py'
   workflow_dispatch:
   schedule:
     - cron: '3,8,13,18,23,28,33,38,43,48,53,58 * * * *'
@@ -100,6 +103,36 @@ jobs:
             fi
             if [ "$attempt" -eq 4 ]; then
               echo "PERSIST_FAILED: report still available as Actions artifact" >&2
+              exit 1
+            fi
+            sleep $((attempt * 3))
+          done
+
+      - name: Automatically enroll new global candidates and refresh paper ledger
+        if: success()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "atlas-quant-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3; do
+            # Always recompute from current committed state; never overwrite an
+            # account ledger produced by a newer concurrent paper job.
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/refresh_paper_if_due.py --max-age-hours 6
+            git add -f paper/state.json paper/status.json
+            if git diff --cached --quiet; then
+              echo "PAPER_LEDGER_UP_TO_DATE"
+              exit 0
+            fi
+            git commit -m "data: refresh prospective paper candidates [skip ci]"
+            if git push origin HEAD:main; then
+              echo "PAPER_LEDGER_PERSISTED on attempt $attempt"
+              exit 0
+            fi
+            if [ "$attempt" -eq 3 ]; then
+              echo "PAPER_LEDGER_PERSIST_FAILED" >&2
               exit 1
             fi
             sleep $((attempt * 3))
