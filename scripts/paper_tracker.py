@@ -57,10 +57,9 @@ def fresh_state():
 def account_template(sym,cfg,d,now):
     last=d.index[-1]
     # No simulated P&L before enrolment; last completed bar is only a reference.
-    x=signals(enrich(d,fast=cfg.fast,slow=cfg.slow,breakout=cfg.breakout),cfg.strategy).iloc[-1]
+    # No historical entry may be filled retrospectively after enrollment.
+    # Only signals observed on bars completed AFTER enrollment may place a future order.
     pending=None
-    if bool(x.entry_signal) and np.isfinite(x.atr):
-        pending={'action':'BUY','atr':float(x.atr),'signal_date':str(last.date())}
     return {'symbol':sym,'strategy':cfg.strategy,'params':asdict(cfg),
        'enrolled_utc':now,'last_processed':str(last.date()),
        'initial_cash':cfg.initial_cash,'cash':cfg.initial_cash,
