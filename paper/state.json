@@ -20,18 +20,54 @@
         "breakout": 20
       },
       "enrolled_utc": "2026-11-23T17:08:45.401042+00:00",
-      "last_processed": "2026-11-22",
+      "last_processed": "2026-11-23",
       "initial_cash": 10000,
       "cash": 10000,
       "position": null,
       "pending": null,
-      "last_close": 6.675818920135498,
+      "last_close": 6.777078151702881,
+      "equity_history": [
+        {
+          "date": "2026-11-23",
+          "equity": 10000,
+          "cash": 10000,
+          "position": false
+        }
+      ],
+      "trades": [],
+      "events": [],
+      "updated_utc": "2026-11-24T07:55:54.842094+00:00"
+    },
+    "7bbb46b85526439f": {
+      "symbol": "ALGO-USD",
+      "strategy": "Ruptura Donchian",
+      "params": {
+        "initial_cash": 10000,
+        "risk_pct": 1,
+        "max_allocation_pct": 20,
+        "fee_bps": 10,
+        "slippage_bps": 5,
+        "stop_atr": 2.0,
+        "reward_risk": 3.0,
+        "max_positions": 5,
+        "strategy": "Ruptura Donchian",
+        "fast": 25,
+        "slow": 150,
+        "breakout": 40
+      },
+      "enrolled_utc": "2026-11-24T07:55:54.497284+00:00",
+      "last_processed": "2026-11-23",
+      "initial_cash": 10000,
+      "cash": 10000,
+      "position": null,
+      "pending": null,
+      "last_close": 0.08130700141191483,
       "equity_history": [],
       "trades": [],
       "events": [],
-      "updated_utc": "2026-11-23T17:08:45.401042+00:00"
+      "updated_utc": "2026-11-24T07:55:54.497284+00:00"
     }
   },
   "errors": [],
-  "last_run_utc": "2026-11-23T17:08:45.401042+00:00"
+  "last_run_utc": "2026-11-24T07:55:54.497284+00:00"
 }
