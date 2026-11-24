@@ -38,31 +38,73 @@ jobs:
           path: reports/shards/*
           if-no-files-found: warn
           retention-days: 3
-      - name: Persist shard results without force pushing
+      - name: Persist shard results safely even when another run updates the same slot
         if: success()
         shell: bash
         run: |
+          set -euo pipefail
           git config user.name "atlas-quant-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f reports/shards/*.json reports/shards/*.csv
-          if git diff --cached --quiet; then
+
+          # Save this run's generated report outside the checkout BEFORE updating main.
+          mapfile -t changed < <(git status --porcelain=v1 -uall -- reports/shards | cut -c4-)
+          if [ "${#changed[@]}" -eq 0 ]; then
             echo "NO_CHANGES_TO_PERSIST"
             exit 0
           fi
-          git commit -m "data: global rotating research shard [skip ci]"
+          backup="$(mktemp -d)"
+          for file in "${changed[@]}"; do
+            mkdir -p "$backup/$(dirname "$file")"
+            cp "$file" "$backup/$file"
+          done
+
           for attempt in 1 2 3 4; do
-            if ! git pull --rebase origin main; then
-              git rebase --abort || true
-              echo "REBASE_CONFLICT: shard report saved as Actions artifact; manual reconciliation required" >&2
-              exit 1
+            # Fresh checkout prevents add/add merge conflicts against competing runs.
+            git fetch origin main
+            git reset --hard origin/main
+            for file in "${changed[@]}"; do
+              mkdir -p "$(dirname "$file")"
+              cp "$backup/$file" "$file"
+            done
+
+            # If another run has produced newer results for the SAME slot, keep those.
+            python - "$backup" <<'PY'
+          import json, pathlib, sys, datetime
+          old=pathlib.Path(sys.argv[1])
+          for candidate in old.glob('reports/shards/slot_*.json'):
+              destination=pathlib.Path('reports/shards')/candidate.name
+              if not destination.exists():
+                  continue
+              try:
+                  current=json.loads(destination.read_text())
+                  new=json.loads(candidate.read_text())
+                  if (current.get('date_utc') or '') > (new.get('date_utc') or ''):
+                      print('KEEP_NEWER_SHARD',destination.name)
+                      # Restore original latest report; do not regress to old data
+                      candidate.write_text(destination.read_text())
+                      csv_file=candidate.with_suffix('.csv')
+                      current_csv=destination.with_suffix('.csv')
+                      if current_csv.exists():
+                          csv_file.write_text(current_csv.read_text())
+              except (OSError,ValueError):
+                  pass
+          PY
+            for file in "${changed[@]}"; do
+              cp "$backup/$file" "$file"
+            done
+            git add -f -- "${changed[@]}"
+            if git diff --cached --quiet; then
+              echo "LATEST_SHARD_ALREADY_PRESENT"
+              exit 0
             fi
+            git commit -m "data: global rotating research shard [skip ci]"
             if git push origin HEAD:main; then
               echo "WORLD_RESEARCH_PERSISTED on attempt $attempt"
               exit 0
             fi
             if [ "$attempt" -eq 4 ]; then
-              echo "PERSIST_FAILED: concurrent updates; report available as Actions artifact" >&2
+              echo "PERSIST_FAILED: report still available as Actions artifact" >&2
               exit 1
             fi
-            sleep $((attempt * 2))
+            sleep $((attempt * 3))
           done
