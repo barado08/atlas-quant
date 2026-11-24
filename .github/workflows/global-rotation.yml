@@ -62,11 +62,7 @@ jobs:
             # Fresh checkout prevents add/add merge conflicts against competing runs.
             git fetch origin main
             git reset --hard origin/main
-            for file in "${changed[@]}"; do
-              mkdir -p "$(dirname "$file")"
-              cp "$backup/$file" "$file"
-            done
-
+            # Compare the backed-up report to the fresh main BEFORE copying it.
             # If another run has produced newer results for the SAME slot, keep those.
             python - "$backup" <<'PY'
           import json, pathlib, sys, datetime
