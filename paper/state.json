@@ -85,16 +85,23 @@
         "breakout": 20
       },
       "enrolled_utc": "2026-11-24T16:17:42.491651+00:00",
-      "last_processed": "2026-11-23",
+      "last_processed": "2026-11-24",
       "initial_cash": 10000,
       "cash": 10000,
       "position": null,
       "pending": null,
-      "last_close": 10.22449016571045,
-      "equity_history": [],
+      "last_close": 10.272669792175293,
+      "equity_history": [
+        {
+          "date": "2026-11-24",
+          "equity": 10000,
+          "cash": 10000,
+          "position": false
+        }
+      ],
       "trades": [],
       "events": [],
-      "updated_utc": "2026-11-24T16:17:42.491651+00:00"
+      "updated_utc": "2026-11-25T01:37:17.417618+00:00"
     },
     "6bf29cbe4e6a54aa": {
       "symbol": "UNG",
@@ -185,5 +192,5 @@
     }
   },
   "errors": [],
-  "last_run_utc": "2026-11-24T16:17:42.491651+00:00"
+  "last_run_utc": "2026-11-25T01:37:16.454374+00:00"
 }
