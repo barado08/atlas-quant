@@ -98,15 +98,21 @@
         "breakout": 20
       },
       "enrolled_utc": "2026-11-24T16:17:42.491651+00:00",
-      "last_processed": "2026-11-24",
+      "last_processed": "2026-11-25",
       "initial_cash": 10000,
       "cash": 10000,
       "position": null,
       "pending": null,
-      "last_close": 10.272669792175293,
+      "last_close": 10.244239807128906,
       "equity_history": [
         {
           "date": "2026-11-24",
+          "equity": 10000,
+          "cash": 10000,
+          "position": false
+        },
+        {
+          "date": "2026-11-25",
           "equity": 10000,
           "cash": 10000,
           "position": false
@@ -114,7 +120,7 @@
       ],
       "trades": [],
       "events": [],
-      "updated_utc": "2026-11-25T01:37:17.417618+00:00"
+      "updated_utc": "2026-11-26T02:53:26.869620+00:00"
     },
     "6bf29cbe4e6a54aa": {
       "symbol": "UNG",
@@ -134,15 +140,21 @@
         "breakout": 20
       },
       "enrolled_utc": "2026-11-24T16:17:42.491651+00:00",
-      "last_processed": "2026-11-24",
+      "last_processed": "2026-11-25",
       "initial_cash": 10000,
       "cash": 10000,
       "position": null,
       "pending": null,
-      "last_close": 10.319999694824219,
+      "last_close": 10.300000190734863,
       "equity_history": [
         {
           "date": "2026-11-24",
+          "equity": 10000,
+          "cash": 10000,
+          "position": false
+        },
+        {
+          "date": "2026-11-25",
           "equity": 10000,
           "cash": 10000,
           "position": false
@@ -150,7 +162,7 @@
       ],
       "trades": [],
       "events": [],
-      "updated_utc": "2026-11-25T10:30:54.201596+00:00"
+      "updated_utc": "2026-11-26T02:53:27.209537+00:00"
     },
     "6fcc173cba349d7f": {
       "symbol": "MCD",
@@ -170,15 +182,21 @@
         "breakout": 20
       },
       "enrolled_utc": "2026-11-24T16:17:42.491651+00:00",
-      "last_processed": "2026-11-24",
+      "last_processed": "2026-11-25",
       "initial_cash": 10000,
       "cash": 10000,
       "position": null,
       "pending": null,
-      "last_close": 280.70001220703125,
+      "last_close": 283.5,
       "equity_history": [
         {
           "date": "2026-11-24",
+          "equity": 10000,
+          "cash": 10000,
+          "position": false
+        },
+        {
+          "date": "2026-11-25",
           "equity": 10000,
           "cash": 10000,
           "position": false
@@ -186,7 +204,7 @@
       ],
       "trades": [],
       "events": [],
-      "updated_utc": "2026-11-25T10:30:55.614672+00:00"
+      "updated_utc": "2026-11-26T02:53:27.466561+00:00"
     },
     "77e83f3060e1cb0e": {
       "symbol": "ICP-USD",
@@ -255,5 +273,5 @@
     }
   },
   "errors": [],
-  "last_run_utc": "2026-11-25T15:59:57.821186+00:00"
+  "last_run_utc": "2026-11-26T02:53:25.804690+00:00"
 }
