@@ -20,12 +20,12 @@
         "breakout": 20
       },
       "enrolled_utc": "2026-11-23T17:08:45.401042+00:00",
-      "last_processed": "2026-11-26",
+      "last_processed": "2026-11-27",
       "initial_cash": 10000,
       "cash": 10000,
       "position": null,
       "pending": null,
-      "last_close": 6.58400821685791,
+      "last_close": 6.604458808898926,
       "equity_history": [
         {
           "date": "2026-11-23",
@@ -50,11 +50,17 @@
           "equity": 10000,
           "cash": 10000,
           "position": false
+        },
+        {
+          "date": "2026-11-27",
+          "equity": 10000,
+          "cash": 10000,
+          "position": false
         }
       ],
       "trades": [],
       "events": [],
-      "updated_utc": "2026-11-27T11:16:11.104734+00:00"
+      "updated_utc": "2026-11-28T10:45:52.524228+00:00"
     },
     "7bbb46b85526439f": {
       "symbol": "ALGO-USD",
@@ -74,12 +80,12 @@
         "breakout": 40
       },
       "enrolled_utc": "2026-11-24T07:55:54.497284+00:00",
-      "last_processed": "2026-11-26",
+      "last_processed": "2026-11-27",
       "initial_cash": 10000,
       "cash": 10000,
       "position": null,
       "pending": null,
-      "last_close": 0.08174200356006622,
+      "last_close": 0.0811619982123375,
       "equity_history": [
         {
           "date": "2026-11-24",
@@ -98,11 +104,17 @@
           "equity": 10000,
           "cash": 10000,
           "position": false
+        },
+        {
+          "date": "2026-11-27",
+          "equity": 10000,
+          "cash": 10000,
+          "position": false
         }
       ],
       "trades": [],
       "events": [],
-      "updated_utc": "2026-11-27T11:16:11.244372+00:00"
+      "updated_utc": "2026-11-28T10:45:52.725441+00:00"
     },
     "06b3d0e4bc55b3e7": {
       "symbol": "USDSEK=X",
@@ -122,12 +134,12 @@
         "breakout": 20
       },
       "enrolled_utc": "2026-11-24T16:17:42.491651+00:00",
-      "last_processed": "2026-11-26",
+      "last_processed": "2026-11-27",
       "initial_cash": 10000,
       "cash": 10000,
       "position": null,
       "pending": null,
-      "last_close": 10.23384952545166,
+      "last_close": 10.207550048828125,
       "equity_history": [
         {
           "date": "2026-11-24",
@@ -146,11 +158,17 @@
           "equity": 10000,
           "cash": 10000,
           "position": false
+        },
+        {
+          "date": "2026-11-27",
+          "equity": 10000,
+          "cash": 10000,
+          "position": false
         }
       ],
       "trades": [],
       "events": [],
-      "updated_utc": "2026-11-27T03:45:24.642871+00:00"
+      "updated_utc": "2026-11-28T10:45:52.928104+00:00"
     },
     "6bf29cbe4e6a54aa": {
       "symbol": "UNG",
@@ -170,12 +188,12 @@
         "breakout": 20
       },
       "enrolled_utc": "2026-11-24T16:17:42.491651+00:00",
-      "last_processed": "2026-11-25",
+      "last_processed": "2026-11-27",
       "initial_cash": 10000,
       "cash": 10000,
       "position": null,
       "pending": null,
-      "last_close": 10.300000190734863,
+      "last_close": 9.84000015258789,
       "equity_history": [
         {
           "date": "2026-11-24",
@@ -188,11 +206,17 @@
           "equity": 10000,
           "cash": 10000,
           "position": false
+        },
+        {
+          "date": "2026-11-27",
+          "equity": 10000,
+          "cash": 10000,
+          "position": false
         }
       ],
       "trades": [],
       "events": [],
-      "updated_utc": "2026-11-26T02:53:27.209537+00:00"
+      "updated_utc": "2026-11-28T10:45:53.171139+00:00"
     },
     "6fcc173cba349d7f": {
       "symbol": "MCD",
@@ -212,12 +236,12 @@
         "breakout": 20
       },
       "enrolled_utc": "2026-11-24T16:17:42.491651+00:00",
-      "last_processed": "2026-11-25",
+      "last_processed": "2026-11-27",
       "initial_cash": 10000,
       "cash": 10000,
       "position": null,
       "pending": null,
-      "last_close": 283.5,
+      "last_close": 282.6199951171875,
       "equity_history": [
         {
           "date": "2026-11-24",
@@ -230,11 +254,17 @@
           "equity": 10000,
           "cash": 10000,
           "position": false
+        },
+        {
+          "date": "2026-11-27",
+          "equity": 10000,
+          "cash": 10000,
+          "position": false
         }
       ],
       "trades": [],
       "events": [],
-      "updated_utc": "2026-11-26T02:53:27.466561+00:00"
+      "updated_utc": "2026-11-28T10:45:53.424379+00:00"
     },
     "77e83f3060e1cb0e": {
       "symbol": "ICP-USD",
@@ -254,12 +284,12 @@
         "breakout": 20
       },
       "enrolled_utc": "2026-11-24T16:17:42.491651+00:00",
-      "last_processed": "2026-11-26",
+      "last_processed": "2026-11-27",
       "initial_cash": 10000,
       "cash": 10000,
       "position": null,
       "pending": null,
-      "last_close": 2.017832040786743,
+      "last_close": 1.9962270259857178,
       "equity_history": [
         {
           "date": "2026-11-24",
@@ -278,11 +308,17 @@
           "equity": 10000,
           "cash": 10000,
           "position": false
+        },
+        {
+          "date": "2026-11-27",
+          "equity": 10000,
+          "cash": 10000,
+          "position": false
         }
       ],
       "trades": [],
       "events": [],
-      "updated_utc": "2026-11-27T11:16:11.890511+00:00"
+      "updated_utc": "2026-11-28T10:45:53.652615+00:00"
     },
     "9cf76e3b9964e032": {
       "symbol": "VALE3.SA",
@@ -302,12 +338,12 @@
         "breakout": 40
       },
       "enrolled_utc": "2026-11-25T15:59:57.821186+00:00",
-      "last_processed": "2026-11-26",
+      "last_processed": "2026-11-27",
       "initial_cash": 10000,
       "cash": 10000,
       "position": null,
       "pending": null,
-      "last_close": 58.72999954223633,
+      "last_close": 57.189998626708984,
       "equity_history": [
         {
           "date": "2026-11-25",
@@ -320,13 +356,19 @@
           "equity": 10000,
           "cash": 10000,
           "position": false
+        },
+        {
+          "date": "2026-11-27",
+          "equity": 10000,
+          "cash": 10000,
+          "position": false
         }
       ],
       "trades": [],
       "events": [],
-      "updated_utc": "2026-11-27T11:16:12.053145+00:00"
+      "updated_utc": "2026-11-28T10:45:53.941862+00:00"
     }
   },
   "errors": [],
-  "last_run_utc": "2026-11-27T22:06:53.916649+00:00"
+  "last_run_utc": "2026-11-28T10:45:51.621134+00:00"
 }
