@@ -1,8 +1,8 @@
 {
-  "date_utc": "2026-11-24T07:55:19.072264+00:00",
-  "commit_sha": "969e76e8128d7ffb0f7c011034bd219aa04ea98a",
+  "date_utc": "2026-11-28T12:49:39.601668+00:00",
+  "commit_sha": "1677b8c0b753cdedb145c12cad6b82aea63eeb50",
   "start_requested": "2018-01-01",
-  "end_exclusive": "2026-11-25",
+  "end_exclusive": "2026-11-29",
   "dataset": "REAL Yahoo Finance/yfinance daily OHLC (research use; not commercial redistributable license)",
   "selection_protocol": "60% train,20% validation,20% final holdout; 12 predefined configs per asset; holdout never consulted for selection",
   "limitations": [
@@ -304,16 +304,16 @@
     {
       "symbol": "AAPL",
       "category": "Acciones EEUU",
-      "bars": 2236,
+      "bars": 2239,
       "first": "2018-01-02",
-      "last": "2026-11-23",
-      "ohlc_sha256": "397b6eca1722a1966ae65c726e65bc5f3ea3d127344441461569c96f8fdf1028",
+      "last": "2026-11-27",
+      "ohlc_sha256": "c7d75839fab791295982217609e4b3dc839c8ea0e3d4c4129386a2a724756831",
       "periods": {
-        "train_end": "2023-05-01",
-        "validation_start": "2023-05-02",
-        "validation_end": "2025-02-11",
-        "holdout_start": "2025-02-12",
-        "last": "2026-11-23"
+        "train_end": "2023-05-03",
+        "validation_start": "2023-05-04",
+        "validation_end": "2025-02-14",
+        "holdout_start": "2025-02-18",
+        "last": "2026-11-27"
       },
       "candidates_tested": 12,
       "eligible_candidates": 10,
@@ -334,22 +334,22 @@
           "breakout": 20
         },
         "train": {
-          "return_pct": 15.7707,
+          "return_pct": 16.7753,
           "max_drawdown_pct": -3.5239,
-          "trades": 44,
-          "sharpe": 0.95548,
-          "win_rate_pct": 54.54545,
-          "benchmark_20pct_passive_pct": 62.9533,
-          "excess_vs_passive_pct": -47.1826
+          "trades": 45,
+          "sharpe": 0.99255,
+          "win_rate_pct": 53.33333,
+          "benchmark_20pct_passive_pct": 61.9065,
+          "excess_vs_passive_pct": -45.1313
         },
         "validation": {
           "return_pct": 4.3476,
-          "max_drawdown_pct": -2.4422,
+          "max_drawdown_pct": -2.4423,
           "trades": 13,
-          "sharpe": 1.0018,
+          "sharpe": 1.00067,
           "win_rate_pct": 46.15385,
-          "benchmark_20pct_passive_pct": 7.8825,
-          "excess_vs_passive_pct": -3.5349
+          "benchmark_20pct_passive_pct": 9.8048,
+          "excess_vs_passive_pct": -5.4572
         },
         "holdout": {
           "return_pct": -1.1051,
@@ -357,8 +357,8 @@
           "trades": 13,
           "sharpe": -0.20642,
           "win_rate_pct": 38.46154,
-          "benchmark_20pct_passive_pct": 9.6782,
-          "excess_vs_passive_pct": -10.7834
+          "benchmark_20pct_passive_pct": 9.5349,
+          "excess_vs_passive_pct": -10.64
         },
         "stress": {
           "2": {
@@ -367,17 +367,17 @@
             "trades": 13,
             "sharpe": -0.34996,
             "win_rate_pct": 30.76923,
-            "benchmark_20pct_passive_pct": 9.6782,
-            "excess_vs_passive_pct": -11.4987
+            "benchmark_20pct_passive_pct": 9.5349,
+            "excess_vs_passive_pct": -11.3554
           },
           "3": {
             "return_pct": -2.5306,
             "max_drawdown_pct": -5.0665,
             "trades": 13,
-            "sharpe": -0.49233,
+            "sharpe": -0.49234,
             "win_rate_pct": 30.76923,
-            "benchmark_20pct_passive_pct": 9.6782,
-            "excess_vs_passive_pct": -12.2088
+            "benchmark_20pct_passive_pct": 9.5349,
+            "excess_vs_passive_pct": -12.0655
           },
           "5": {
             "return_pct": -3.9351,
@@ -385,8 +385,8 @@
             "trades": 13,
             "sharpe": -0.7714,
             "win_rate_pct": 30.76923,
-            "benchmark_20pct_passive_pct": 9.6782,
-            "excess_vs_passive_pct": -13.6134
+            "benchmark_20pct_passive_pct": 9.5349,
+            "excess_vs_passive_pct": -13.47
           }
         },
         "gates": {
@@ -399,23 +399,23 @@
           "holdout_2x_cost_positive": false,
           "holdout_drawdown_below_15pct": true
         },
-        "selection_score": -11.34495
+        "selection_score": -12.95959
       },
       "status": "FAILED_ROBUSTNESS_GATES"
     },
     {
       "symbol": "IEF",
       "category": "Bonos materias primas REIT",
-      "bars": 2236,
+      "bars": 2239,
       "first": "2018-01-02",
-      "last": "2026-11-23",
-      "ohlc_sha256": "a36fef38e8d29adc08a8749f354ddef4658d9b94bc2e5481ab62277ff553611e",
+      "last": "2026-11-27",
+      "ohlc_sha256": "76892e42aee634e2505ae51f938f3348d9b7f0a019c3678d41f5a562721906e5",
       "periods": {
-        "train_end": "2023-05-01",
-        "validation_start": "2023-05-02",
-        "validation_end": "2025-02-11",
-        "holdout_start": "2025-02-12",
-        "last": "2026-11-23"
+        "train_end": "2023-05-03",
+        "validation_start": "2023-05-04",
+        "validation_end": "2025-02-14",
+        "holdout_start": "2025-02-18",
+        "last": "2026-11-27"
       },
       "candidates_tested": 12,
       "eligible_candidates": 10,
@@ -436,59 +436,59 @@
           "breakout": 20
         },
         "train": {
-          "return_pct": -1.878,
+          "return_pct": -1.4937,
           "max_drawdown_pct": -2.1298,
           "trades": 13,
-          "sharpe": -0.68852,
-          "win_rate_pct": 15.38462,
-          "benchmark_20pct_passive_pct": 0.4511,
-          "excess_vs_passive_pct": -2.3291
+          "sharpe": -0.53359,
+          "win_rate_pct": 23.07692,
+          "benchmark_20pct_passive_pct": 0.8526,
+          "excess_vs_passive_pct": -2.3463
         },
         "validation": {
-          "return_pct": 0.0157,
+          "return_pct": 0.0156,
           "max_drawdown_pct": -0.5004,
           "trades": 3,
-          "sharpe": 0.02827,
+          "sharpe": 0.02823,
           "win_rate_pct": 33.33333,
-          "benchmark_20pct_passive_pct": -0.2072,
-          "excess_vs_passive_pct": 0.2229
+          "benchmark_20pct_passive_pct": -0.2384,
+          "excess_vs_passive_pct": 0.2541
         },
         "holdout": {
-          "return_pct": -0.3525,
-          "max_drawdown_pct": -0.7093,
-          "trades": 4,
-          "sharpe": -0.72555,
-          "win_rate_pct": 25.0,
-          "benchmark_20pct_passive_pct": 1.2679,
-          "excess_vs_passive_pct": -1.6204
+          "return_pct": -0.4296,
+          "max_drawdown_pct": -0.7861,
+          "trades": 5,
+          "sharpe": -0.81245,
+          "win_rate_pct": 20.0,
+          "benchmark_20pct_passive_pct": 1.1396,
+          "excess_vs_passive_pct": -1.5692
         },
         "stress": {
           "2": {
-            "return_pct": -0.5357,
-            "max_drawdown_pct": -0.8416,
-            "trades": 4,
-            "sharpe": -1.06056,
-            "win_rate_pct": 25.0,
-            "benchmark_20pct_passive_pct": 1.2679,
-            "excess_vs_passive_pct": -1.8036
+            "return_pct": -0.6722,
+            "max_drawdown_pct": -0.9777,
+            "trades": 5,
+            "sharpe": -1.19011,
+            "win_rate_pct": 20.0,
+            "benchmark_20pct_passive_pct": 1.1396,
+            "excess_vs_passive_pct": -1.8118
           },
           "3": {
-            "return_pct": -0.7342,
-            "max_drawdown_pct": -1.0042,
-            "trades": 4,
-            "sharpe": -1.33015,
-            "win_rate_pct": 25.0,
-            "benchmark_20pct_passive_pct": 1.2679,
-            "excess_vs_passive_pct": -2.0021
+            "return_pct": -0.9299,
+            "max_drawdown_pct": -1.1993,
+            "trades": 5,
+            "sharpe": -1.4798,
+            "win_rate_pct": 20.0,
+            "benchmark_20pct_passive_pct": 1.1396,
+            "excess_vs_passive_pct": -2.0695
           },
           "5": {
-            "return_pct": -1.1356,
-            "max_drawdown_pct": -1.4176,
-            "trades": 4,
-            "sharpe": -1.62445,
-            "win_rate_pct": 25.0,
-            "benchmark_20pct_passive_pct": 1.2679,
-            "excess_vs_passive_pct": -2.4035
+            "return_pct": -1.4485,
+            "max_drawdown_pct": -1.7297,
+            "trades": 5,
+            "sharpe": -1.79861,
+            "win_rate_pct": 20.0,
+            "benchmark_20pct_passive_pct": 1.1396,
+            "excess_vs_passive_pct": -2.5881
           }
         },
         "gates": {
@@ -497,27 +497,27 @@
           "validation_drawdown_below_15pct": true,
           "holdout_positive": false,
           "holdout_beats_passive": false,
-          "holdout_trades_at_least_5": false,
+          "holdout_trades_at_least_5": true,
           "holdout_2x_cost_positive": false,
           "holdout_drawdown_below_15pct": true
         },
-        "selection_score": -0.37127
+        "selection_score": -0.32343
       },
       "status": "FAILED_ROBUSTNESS_GATES"
     },
     {
       "symbol": "AMZN",
       "category": "Acciones EEUU",
-      "bars": 2236,
+      "bars": 2239,
       "first": "2018-01-02",
-      "last": "2026-11-23",
-      "ohlc_sha256": "5cfdbfe0789f262d8c35a932f48c780849472eded768ebbf39bf142f6e67145d",
+      "last": "2026-11-27",
+      "ohlc_sha256": "2d9cb9688689d178de8824f927cdd3e3641ffe6c2b57efe4bac9cdd044ebd61d",
       "periods": {
-        "train_end": "2023-05-01",
-        "validation_start": "2023-05-02",
-        "validation_end": "2025-02-11",
-        "holdout_start": "2025-02-12",
-        "last": "2026-11-23"
+        "train_end": "2023-05-03",
+        "validation_start": "2023-05-04",
+        "validation_end": "2025-02-14",
+        "holdout_start": "2025-02-18",
+        "last": "2026-11-27"
       },
       "candidates_tested": 12,
       "eligible_candidates": 9,
@@ -538,22 +538,22 @@
           "breakout": 20
         },
         "train": {
-          "return_pct": 0.3659,
-          "max_drawdown_pct": -5.5203,
+          "return_pct": 0.2664,
+          "max_drawdown_pct": -5.614,
           "trades": 38,
-          "sharpe": 0.03879,
+          "sharpe": 0.03195,
           "win_rate_pct": 31.57895,
-          "benchmark_20pct_passive_pct": 14.3311,
-          "excess_vs_passive_pct": -13.9652
+          "benchmark_20pct_passive_pct": 14.8693,
+          "excess_vs_passive_pct": -14.6029
         },
         "validation": {
           "return_pct": 5.4506,
           "max_drawdown_pct": -2.4138,
           "trades": 15,
-          "sharpe": 0.82255,
+          "sharpe": 0.82163,
           "win_rate_pct": 60.0,
-          "benchmark_20pct_passive_pct": 24.9214,
-          "excess_vs_passive_pct": -19.4708
+          "benchmark_20pct_passive_pct": 23.9769,
+          "excess_vs_passive_pct": -18.5263
         },
         "holdout": {
           "return_pct": -1.5748,
@@ -561,8 +561,8 @@
           "trades": 12,
           "sharpe": -0.26604,
           "win_rate_pct": 33.33333,
-          "benchmark_20pct_passive_pct": 2.3116,
-          "excess_vs_passive_pct": -3.8864
+          "benchmark_20pct_passive_pct": 2.424,
+          "excess_vs_passive_pct": -3.9988
         },
         "stress": {
           "2": {
@@ -571,8 +571,8 @@
             "trades": 12,
             "sharpe": -0.37037,
             "win_rate_pct": 25.0,
-            "benchmark_20pct_passive_pct": 2.3116,
-            "excess_vs_passive_pct": -4.4718
+            "benchmark_20pct_passive_pct": 2.424,
+            "excess_vs_passive_pct": -4.5842
           },
           "3": {
             "return_pct": -2.8767,
@@ -580,8 +580,8 @@
             "trades": 12,
             "sharpe": -0.49306,
             "win_rate_pct": 25.0,
-            "benchmark_20pct_passive_pct": 2.3116,
-            "excess_vs_passive_pct": -5.1884
+            "benchmark_20pct_passive_pct": 2.424,
+            "excess_vs_passive_pct": -5.3007
           },
           "5": {
             "return_pct": -4.0097,
@@ -589,8 +589,8 @@
             "trades": 12,
             "sharpe": -0.6882,
             "win_rate_pct": 25.0,
-            "benchmark_20pct_passive_pct": 2.3116,
-            "excess_vs_passive_pct": -6.3213
+            "benchmark_20pct_passive_pct": 2.424,
+            "excess_vs_passive_pct": -6.4337
           }
         },
         "gates": {
@@ -603,23 +603,23 @@
           "holdout_2x_cost_positive": false,
           "holdout_drawdown_below_15pct": true
         },
-        "selection_score": -22.54396
+        "selection_score": -21.70008
       },
       "status": "FAILED_ROBUSTNESS_GATES"
     },
     {
       "symbol": "AGG",
       "category": "Bonos materias primas REIT",
-      "bars": 2236,
+      "bars": 2239,
       "first": "2018-01-02",
-      "last": "2026-11-23",
-      "ohlc_sha256": "97f1bce65663692419d82a1125beadf638d81a7280b79d24b7e9336ac3bdde3b",
+      "last": "2026-11-27",
+      "ohlc_sha256": "a3c126a89a80cf49ff1b66f9205f2389165d0f9c5569f57d57b2b188b355405d",
       "periods": {
-        "train_end": "2023-05-01",
-        "validation_start": "2023-05-02",
-        "validation_end": "2025-02-11",
-        "holdout_start": "2025-02-12",
-        "last": "2026-11-23"
+        "train_end": "2023-05-03",
+        "validation_start": "2023-05-04",
+        "validation_end": "2025-02-14",
+        "holdout_start": "2025-02-18",
+        "last": "2026-11-27"
       },
       "candidates_tested": 12,
       "eligible_candidates": 11,
@@ -640,22 +640,22 @@
           "breakout": 40
         },
         "train": {
-          "return_pct": -0.1488,
-          "max_drawdown_pct": -1.3599,
+          "return_pct": 0.5081,
+          "max_drawdown_pct": -1.1966,
           "trades": 23,
-          "sharpe": -0.06726,
-          "win_rate_pct": 43.47826,
-          "benchmark_20pct_passive_pct": 0.5692,
-          "excess_vs_passive_pct": -0.7181
+          "sharpe": 0.23769,
+          "win_rate_pct": 47.82609,
+          "benchmark_20pct_passive_pct": 0.861,
+          "excess_vs_passive_pct": -0.3529
         },
         "validation": {
           "return_pct": 0.4768,
           "max_drawdown_pct": -0.9615,
           "trades": 6,
-          "sharpe": 0.49693,
+          "sharpe": 0.49636,
           "win_rate_pct": 33.33333,
-          "benchmark_20pct_passive_pct": 0.7789,
-          "excess_vs_passive_pct": -0.3021
+          "benchmark_20pct_passive_pct": 0.8039,
+          "excess_vs_passive_pct": -0.3271
         },
         "holdout": {
           "return_pct": -0.5817,
@@ -663,18 +663,18 @@
           "trades": 10,
           "sharpe": -0.72737,
           "win_rate_pct": 30.0,
-          "benchmark_20pct_passive_pct": 1.3283,
-          "excess_vs_passive_pct": -1.91
+          "benchmark_20pct_passive_pct": 1.2077,
+          "excess_vs_passive_pct": -1.7894
         },
         "stress": {
           "2": {
             "return_pct": -1.0545,
             "max_drawdown_pct": -1.2982,
             "trades": 10,
-            "sharpe": -1.23743,
+            "sharpe": -1.23744,
             "win_rate_pct": 20.0,
-            "benchmark_20pct_passive_pct": 1.3283,
-            "excess_vs_passive_pct": -2.3828
+            "benchmark_20pct_passive_pct": 1.2077,
+            "excess_vs_passive_pct": -2.2623
           },
           "3": {
             "return_pct": -1.6149,
@@ -682,8 +682,8 @@
             "trades": 9,
             "sharpe": -1.72399,
             "win_rate_pct": 11.11111,
-            "benchmark_20pct_passive_pct": 1.3283,
-            "excess_vs_passive_pct": -2.9432
+            "benchmark_20pct_passive_pct": 1.2077,
+            "excess_vs_passive_pct": -2.8227
           },
           "5": {
             "return_pct": -2.5891,
@@ -691,8 +691,8 @@
             "trades": 9,
             "sharpe": -2.18672,
             "win_rate_pct": 11.11111,
-            "benchmark_20pct_passive_pct": 1.3283,
-            "excess_vs_passive_pct": -3.9174
+            "benchmark_20pct_passive_pct": 1.2077,
+            "excess_vs_passive_pct": -3.7968
           }
         },
         "gates": {
@@ -705,23 +705,23 @@
           "holdout_2x_cost_positive": false,
           "holdout_drawdown_below_15pct": true
         },
-        "selection_score": -0.72954
+        "selection_score": -0.66848
       },
       "status": "FAILED_ROBUSTNESS_GATES"
     },
     {
       "symbol": "TSLA",
       "category": "Acciones EEUU",
-      "bars": 2236,
+      "bars": 2239,
       "first": "2018-01-02",
-      "last": "2026-11-23",
-      "ohlc_sha256": "78f43b4ce4000134ef7797714257d2fd50fb891d093fe3103053a7eb3932134e",
+      "last": "2026-11-27",
+      "ohlc_sha256": "c5103ed265d9f025aeabef89ea705cdc40c63cef3bacd6b51dc4dcabad697dec",
       "periods": {
-        "train_end": "2023-05-01",
-        "validation_start": "2023-05-02",
-        "validation_end": "2025-02-11",
-        "holdout_start": "2025-02-12",
-        "last": "2026-11-23"
+        "train_end": "2023-05-03",
+        "validation_start": "2023-05-04",
+        "validation_end": "2025-02-14",
+        "holdout_start": "2025-02-18",
+        "last": "2026-11-27"
       },
       "candidates_tested": 12,
       "eligible_candidates": 11,
@@ -745,19 +745,19 @@
           "return_pct": 33.0024,
           "max_drawdown_pct": -2.4808,
           "trades": 26,
-          "sharpe": 1.5367,
+          "sharpe": 1.53554,
           "win_rate_pct": 57.69231,
-          "benchmark_20pct_passive_pct": 131.4648,
-          "excess_vs_passive_pct": -98.4623
+          "benchmark_20pct_passive_pct": 130.3229,
+          "excess_vs_passive_pct": -97.3205
         },
         "validation": {
           "return_pct": 6.2754,
           "max_drawdown_pct": -3.2956,
           "trades": 10,
-          "sharpe": 1.07294,
+          "sharpe": 1.07174,
           "win_rate_pct": 40.0,
-          "benchmark_20pct_passive_pct": 20.9831,
-          "excess_vs_passive_pct": -14.7077
+          "benchmark_20pct_passive_pct": 24.1489,
+          "excess_vs_passive_pct": -17.8735
         },
         "holdout": {
           "return_pct": -2.2385,
@@ -765,8 +765,8 @@
           "trades": 7,
           "sharpe": -0.49222,
           "win_rate_pct": 14.28571,
-          "benchmark_20pct_passive_pct": 2.9093,
-          "excess_vs_passive_pct": -5.1478
+          "benchmark_20pct_passive_pct": 2.5919,
+          "excess_vs_passive_pct": -4.8303
         },
         "stress": {
           "2": {
@@ -775,8 +775,8 @@
             "trades": 7,
             "sharpe": -0.54753,
             "win_rate_pct": 14.28571,
-            "benchmark_20pct_passive_pct": 2.9093,
-            "excess_vs_passive_pct": -5.3905
+            "benchmark_20pct_passive_pct": 2.5919,
+            "excess_vs_passive_pct": -5.0731
           },
           "3": {
             "return_pct": -2.7236,
@@ -784,8 +784,8 @@
             "trades": 7,
             "sharpe": -0.60256,
             "win_rate_pct": 14.28571,
-            "benchmark_20pct_passive_pct": 2.9093,
-            "excess_vs_passive_pct": -5.6329
+            "benchmark_20pct_passive_pct": 2.5919,
+            "excess_vs_passive_pct": -5.3155
           },
           "5": {
             "return_pct": -3.2071,
@@ -793,8 +793,8 @@
             "trades": 7,
             "sharpe": -0.71153,
             "win_rate_pct": 14.28571,
-            "benchmark_20pct_passive_pct": 2.9093,
-            "excess_vs_passive_pct": -6.1164
+            "benchmark_20pct_passive_pct": 2.5919,
+            "excess_vs_passive_pct": -5.799
           }
         },
         "gates": {
@@ -807,23 +807,23 @@
           "holdout_2x_cost_positive": false,
           "holdout_drawdown_below_15pct": true
         },
-        "selection_score": -30.46572
+        "selection_score": -33.46026
       },
       "status": "FAILED_ROBUSTNESS_GATES"
     },
     {
       "symbol": "JNK",
       "category": "Bonos materias primas REIT",
-      "bars": 2236,
+      "bars": 2239,
       "first": "2018-01-02",
-      "last": "2026-11-23",
-      "ohlc_sha256": "279c919ac9c673dd032354677d52ef1359edd753403233daed749f496c7e3c48",
+      "last": "2026-11-27",
+      "ohlc_sha256": "b321f750cf50de8c85b690d3027a0ffa950df3b6c967557f550f390d9b7f56d3",
       "periods": {
-        "train_end": "2023-05-01",
-        "validation_start": "2023-05-02",
-        "validation_end": "2025-02-11",
-        "holdout_start": "2025-02-12",
-        "last": "2026-11-23"
+        "train_end": "2023-05-03",
+        "validation_start": "2023-05-04",
+        "validation_end": "2025-02-14",
+        "holdout_start": "2025-02-18",
+        "last": "2026-11-27"
       },
       "candidates_tested": 12,
       "eligible_candidates": 9,
@@ -844,31 +844,31 @@
           "breakout": 20
         },
         "train": {
-          "return_pct": -0.3639,
+          "return_pct": -0.3943,
           "max_drawdown_pct": -1.7527,
           "trades": 15,
-          "sharpe": -0.12933,
+          "sharpe": -0.14042,
           "win_rate_pct": 33.33333,
-          "benchmark_20pct_passive_pct": 2.1093,
-          "excess_vs_passive_pct": -2.4732
+          "benchmark_20pct_passive_pct": 2.0755,
+          "excess_vs_passive_pct": -2.4698
         },
         "validation": {
           "return_pct": 0.971,
           "max_drawdown_pct": -0.2756,
           "trades": 3,
-          "sharpe": 1.30244,
+          "sharpe": 1.30097,
           "win_rate_pct": 100.0,
-          "benchmark_20pct_passive_pct": 3.6545,
-          "excess_vs_passive_pct": -2.6835
+          "benchmark_20pct_passive_pct": 3.8345,
+          "excess_vs_passive_pct": -2.8635
         },
         "holdout": {
           "return_pct": 0.409,
           "max_drawdown_pct": -0.4223,
           "trades": 3,
-          "sharpe": 0.50289,
+          "sharpe": 0.5029,
           "win_rate_pct": 66.66667,
-          "benchmark_20pct_passive_pct": 1.4497,
-          "excess_vs_passive_pct": -1.0408
+          "benchmark_20pct_passive_pct": 1.3642,
+          "excess_vs_passive_pct": -0.9552
         },
         "stress": {
           "2": {
@@ -877,8 +877,8 @@
             "trades": 3,
             "sharpe": 0.58942,
             "win_rate_pct": 66.66667,
-            "benchmark_20pct_passive_pct": 1.4497,
-            "excess_vs_passive_pct": -0.9897
+            "benchmark_20pct_passive_pct": 1.3642,
+            "excess_vs_passive_pct": -0.9042
           },
           "3": {
             "return_pct": 0.3083,
@@ -886,8 +886,8 @@
             "trades": 3,
             "sharpe": 0.377,
             "win_rate_pct": 66.66667,
-            "benchmark_20pct_passive_pct": 1.4497,
-            "excess_vs_passive_pct": -1.1415
+            "benchmark_20pct_passive_pct": 1.3642,
+            "excess_vs_passive_pct": -1.0559
           },
           "5": {
             "return_pct": 0.0114,
@@ -895,8 +895,8 @@
             "trades": 3,
             "sharpe": 0.01457,
             "win_rate_pct": 66.66667,
-            "benchmark_20pct_passive_pct": 1.4497,
-            "excess_vs_passive_pct": -1.4384
+            "benchmark_20pct_passive_pct": 1.3642,
+            "excess_vs_passive_pct": -1.3528
           }
         },
         "gates": {
@@ -909,23 +909,23 @@
           "holdout_2x_cost_positive": true,
           "holdout_drawdown_below_15pct": true
         },
-        "selection_score": -3.2039
+        "selection_score": -3.38491
       },
       "status": "FAILED_ROBUSTNESS_GATES"
     },
     {
       "symbol": "NFLX",
       "category": "Acciones EEUU",
-      "bars": 2236,
+      "bars": 2239,
       "first": "2018-01-02",
-      "last": "2026-11-23",
-      "ohlc_sha256": "38c1f53b3017988b0a07c6541c5d972be529590aab57146e273eb4469a736280",
+      "last": "2026-11-27",
+      "ohlc_sha256": "f76a9e628b61047d1664ee1288b9189e9228593dd141dd60184cdd130a2bf360",
       "periods": {
-        "train_end": "2023-05-01",
-        "validation_start": "2023-05-02",
-        "validation_end": "2025-02-11",
-        "holdout_start": "2025-02-12",
-        "last": "2026-11-23"
+        "train_end": "2023-05-03",
+        "validation_start": "2023-05-04",
+        "validation_end": "2025-02-14",
+        "holdout_start": "2025-02-18",
+        "last": "2026-11-27"
       },
       "candidates_tested": 12,
       "eligible_candidates": 9,
@@ -949,56 +949,56 @@
           "return_pct": -2.4788,
           "max_drawdown_pct": -3.8773,
           "trades": 16,
-          "sharpe": -0.21877,
+          "sharpe": -0.21861,
           "win_rate_pct": 37.5,
-          "benchmark_20pct_passive_pct": 12.2395,
-          "excess_vs_passive_pct": -14.7184
+          "benchmark_20pct_passive_pct": 11.7601,
+          "excess_vs_passive_pct": -14.2389
         },
         "validation": {
-          "return_pct": 11.8288,
+          "return_pct": 12.5299,
           "max_drawdown_pct": -2.224,
           "trades": 9,
-          "sharpe": 1.90284,
+          "sharpe": 2.00186,
           "win_rate_pct": 88.88889,
-          "benchmark_20pct_passive_pct": 43.4911,
-          "excess_vs_passive_pct": -31.6623
+          "benchmark_20pct_passive_pct": 46.0016,
+          "excess_vs_passive_pct": -33.4717
         },
         "holdout": {
-          "return_pct": -1.1786,
+          "return_pct": -0.1405,
           "max_drawdown_pct": -2.1623,
-          "trades": 4,
-          "sharpe": -0.38832,
-          "win_rate_pct": 25.0,
-          "benchmark_20pct_passive_pct": -8.6889,
-          "excess_vs_passive_pct": 7.5103
+          "trades": 3,
+          "sharpe": -0.04122,
+          "win_rate_pct": 33.33333,
+          "benchmark_20pct_passive_pct": -8.2357,
+          "excess_vs_passive_pct": 8.0952
         },
         "stress": {
           "2": {
-            "return_pct": -1.3276,
+            "return_pct": -0.2512,
             "max_drawdown_pct": -2.2154,
-            "trades": 4,
-            "sharpe": -0.43666,
-            "win_rate_pct": 25.0,
-            "benchmark_20pct_passive_pct": -8.6889,
-            "excess_vs_passive_pct": 7.3613
+            "trades": 3,
+            "sharpe": -0.07955,
+            "win_rate_pct": 33.33333,
+            "benchmark_20pct_passive_pct": -8.2357,
+            "excess_vs_passive_pct": 7.9845
           },
           "3": {
-            "return_pct": -1.4765,
+            "return_pct": -0.3619,
             "max_drawdown_pct": -2.2685,
-            "trades": 4,
-            "sharpe": -0.48431,
-            "win_rate_pct": 25.0,
-            "benchmark_20pct_passive_pct": -8.6889,
-            "excess_vs_passive_pct": 7.2124
+            "trades": 3,
+            "sharpe": -0.11742,
+            "win_rate_pct": 33.33333,
+            "benchmark_20pct_passive_pct": -8.2357,
+            "excess_vs_passive_pct": 7.8738
           },
           "5": {
-            "return_pct": -1.7742,
+            "return_pct": -0.5833,
             "max_drawdown_pct": -2.4022,
-            "trades": 4,
-            "sharpe": -0.57724,
-            "win_rate_pct": 25.0,
-            "benchmark_20pct_passive_pct": -8.6889,
-            "excess_vs_passive_pct": 6.9147
+            "trades": 3,
+            "sharpe": -0.19162,
+            "win_rate_pct": 33.33333,
+            "benchmark_20pct_passive_pct": -8.2357,
+            "excess_vs_passive_pct": 7.6525
           }
         },
         "gates": {
@@ -1011,23 +1011,23 @@
           "holdout_2x_cost_positive": false,
           "holdout_drawdown_below_15pct": true
         },
-        "selection_score": -35.25264
+        "selection_score": -37.02517
       },
       "status": "FAILED_ROBUSTNESS_GATES"
     },
     {
       "symbol": "GLD",
       "category": "Bonos materias primas REIT",
-      "bars": 2236,
+      "bars": 2239,
       "first": "2018-01-02",
-      "last": "2026-11-23",
-      "ohlc_sha256": "8f3001a15306cad26e3159f2824bbdebd07da2cdee371956079e85c4c31a9ed4",
+      "last": "2026-11-27",
+      "ohlc_sha256": "85987e1b0854e0108c56eadcbbde333a9d68b13a72ba8ece2f8eaad95366f813",
       "periods": {
-        "train_end": "2023-05-01",
-        "validation_start": "2023-05-02",
-        "validation_end": "2025-02-11",
-        "holdout_start": "2025-02-12",
-        "last": "2026-11-23"
+        "train_end": "2023-05-03",
+        "validation_start": "2023-05-04",
+        "validation_end": "2025-02-14",
+        "holdout_start": "2025-02-18",
+        "last": "2026-11-27"
       },
       "candidates_tested": 12,
       "eligible_candidates": 9,
@@ -1048,59 +1048,59 @@
           "breakout": 40
         },
         "train": {
-          "return_pct": 6.159,
+          "return_pct": 6.2373,
           "max_drawdown_pct": -1.6378,
           "trades": 18,
-          "sharpe": 0.74125,
+          "sharpe": 0.74989,
           "win_rate_pct": 55.55556,
-          "benchmark_20pct_passive_pct": 9.3999,
-          "excess_vs_passive_pct": -3.2409
+          "benchmark_20pct_passive_pct": 10.2213,
+          "excess_vs_passive_pct": -3.984
         },
         "validation": {
-          "return_pct": 1.9982,
+          "return_pct": 1.7987,
           "max_drawdown_pct": -1.7202,
-          "trades": 10,
-          "sharpe": 0.75446,
-          "win_rate_pct": 40.0,
-          "benchmark_20pct_passive_pct": 8.5186,
-          "excess_vs_passive_pct": -6.5203
+          "trades": 11,
+          "sharpe": 0.66992,
+          "win_rate_pct": 36.36364,
+          "benchmark_20pct_passive_pct": 7.9658,
+          "excess_vs_passive_pct": -6.1671
         },
         "holdout": {
-          "return_pct": 2.1896,
+          "return_pct": 2.1465,
           "max_drawdown_pct": -2.3424,
           "trades": 12,
-          "sharpe": 0.43244,
+          "sharpe": 0.42701,
           "win_rate_pct": 50.0,
-          "benchmark_20pct_passive_pct": 4.8829,
-          "excess_vs_passive_pct": -2.6933
+          "benchmark_20pct_passive_pct": 4.7063,
+          "excess_vs_passive_pct": -2.5598
         },
         "stress": {
           "2": {
-            "return_pct": 1.5235,
+            "return_pct": 1.4808,
             "max_drawdown_pct": -2.39,
             "trades": 12,
-            "sharpe": 0.30476,
+            "sharpe": 0.29865,
             "win_rate_pct": 33.33333,
-            "benchmark_20pct_passive_pct": 4.8829,
-            "excess_vs_passive_pct": -3.3594
+            "benchmark_20pct_passive_pct": 4.7063,
+            "excess_vs_passive_pct": -3.2255
           },
           "3": {
-            "return_pct": 0.8619,
+            "return_pct": 0.8196,
             "max_drawdown_pct": -2.5108,
             "trades": 12,
-            "sharpe": 0.17834,
+            "sharpe": 0.17144,
             "win_rate_pct": 33.33333,
-            "benchmark_20pct_passive_pct": 4.8829,
-            "excess_vs_passive_pct": -4.021
+            "benchmark_20pct_passive_pct": 4.7063,
+            "excess_vs_passive_pct": -3.8868
           },
           "5": {
-            "return_pct": -0.4481,
+            "return_pct": -0.4898,
             "max_drawdown_pct": -2.8752,
             "trades": 12,
-            "sharpe": -0.06908,
+            "sharpe": -0.07786,
             "win_rate_pct": 33.33333,
-            "benchmark_20pct_passive_pct": 4.8829,
-            "excess_vs_passive_pct": -5.331
+            "benchmark_20pct_passive_pct": 4.7063,
+            "excess_vs_passive_pct": -5.1961
           }
         },
         "gates": {
@@ -1113,23 +1113,23 @@
           "holdout_2x_cost_positive": true,
           "holdout_drawdown_below_15pct": true
         },
-        "selection_score": -7.52249
+        "selection_score": -7.28076
       },
       "status": "FAILED_ROBUSTNESS_GATES"
     },
     {
       "symbol": "ADBE",
       "category": "Acciones EEUU",
-      "bars": 2236,
+      "bars": 2239,
       "first": "2018-01-02",
-      "last": "2026-11-23",
-      "ohlc_sha256": "951302697e4b2ee714d1f79ed21d050930bc71db783fbf08a473a39ad3704802",
+      "last": "2026-11-27",
+      "ohlc_sha256": "b09617394cc6730beb8b08735e3d42b3f782b4f986465f659ba5842ea5743393",
       "periods": {
-        "train_end": "2023-05-01",
-        "validation_start": "2023-05-02",
-        "validation_end": "2025-02-11",
-        "holdout_start": "2025-02-12",
-        "last": "2026-11-23"
+        "train_end": "2023-05-03",
+        "validation_start": "2023-05-04",
+        "validation_end": "2025-02-14",
+        "holdout_start": "2025-02-18",
+        "last": "2026-11-27"
       },
       "candidates_tested": 12,
       "eligible_candidates": 11,
@@ -1150,22 +1150,22 @@
           "breakout": 20
         },
         "train": {
-          "return_pct": 11.7592,
+          "return_pct": 10.2249,
           "max_drawdown_pct": -2.4092,
           "trades": 12,
-          "sharpe": 1.01964,
-          "win_rate_pct": 75.0,
-          "benchmark_20pct_passive_pct": 22.1103,
-          "excess_vs_passive_pct": -10.3511
+          "sharpe": 0.86919,
+          "win_rate_pct": 66.66667,
+          "benchmark_20pct_passive_pct": 18.8576,
+          "excess_vs_passive_pct": -8.6327
         },
         "validation": {
           "return_pct": 5.8794,
           "max_drawdown_pct": -1.5343,
           "trades": 8,
-          "sharpe": 1.57648,
+          "sharpe": 1.5747,
           "win_rate_pct": 62.5,
-          "benchmark_20pct_passive_pct": 4.8912,
-          "excess_vs_passive_pct": 0.9881
+          "benchmark_20pct_passive_pct": 7.4043,
+          "excess_vs_passive_pct": -1.525
         },
         "holdout": {
           "return_pct": -1.8573,
@@ -1173,8 +1173,8 @@
           "trades": 5,
           "sharpe": -0.46336,
           "win_rate_pct": 20.0,
-          "benchmark_20pct_passive_pct": -10.3198,
-          "excess_vs_passive_pct": 8.4626
+          "benchmark_20pct_passive_pct": -9.8821,
+          "excess_vs_passive_pct": 8.0249
         },
         "stress": {
           "2": {
@@ -1183,8 +1183,8 @@
             "trades": 5,
             "sharpe": -0.52675,
             "win_rate_pct": 20.0,
-            "benchmark_20pct_passive_pct": -10.3198,
-            "excess_vs_passive_pct": 8.2229
+            "benchmark_20pct_passive_pct": -9.8821,
+            "excess_vs_passive_pct": 7.7852
           },
           "3": {
             "return_pct": -2.3361,
@@ -1192,8 +1192,8 @@
             "trades": 5,
             "sharpe": -0.59008,
             "win_rate_pct": 20.0,
-            "benchmark_20pct_passive_pct": -10.3198,
-            "excess_vs_passive_pct": 7.9837
+            "benchmark_20pct_passive_pct": -9.8821,
+            "excess_vs_passive_pct": 7.546
           },
           "5": {
             "return_pct": -2.724,
@@ -1201,13 +1201,13 @@
             "trades": 5,
             "sharpe": -0.6889,
             "win_rate_pct": 20.0,
-            "benchmark_20pct_passive_pct": -10.3198,
-            "excess_vs_passive_pct": 7.5958
+            "benchmark_20pct_passive_pct": -9.8821,
+            "excess_vs_passive_pct": 7.1581
           }
         },
         "gates": {
           "validation_profit_after_costs": true,
-          "validation_beats_passive": true,
+          "validation_beats_passive": false,
           "validation_drawdown_below_15pct": true,
           "holdout_positive": false,
           "holdout_beats_passive": true,
@@ -1215,23 +1215,23 @@
           "holdout_2x_cost_positive": false,
           "holdout_drawdown_below_15pct": true
         },
-        "selection_score": -1.02486
+        "selection_score": -3.28019
       },
       "status": "FAILED_ROBUSTNESS_GATES"
     },
     {
       "symbol": "PPLT",
       "category": "Bonos materias primas REIT",
-      "bars": 2236,
+      "bars": 2239,
       "first": "2018-01-02",
-      "last": "2026-11-23",
-      "ohlc_sha256": "a8ff64ae64b7933a5381b67de6134aedde893497d1d6b45453bd08ef439744de",
+      "last": "2026-11-27",
+      "ohlc_sha256": "12968affd67423474e7fb7148c54487f37a20af4d6a1fdfc428f9ea9d7e87282",
       "periods": {
-        "train_end": "2023-05-01",
-        "validation_start": "2023-05-02",
-        "validation_end": "2025-02-11",
-        "holdout_start": "2025-02-12",
-        "last": "2026-11-23"
+        "train_end": "2023-05-03",
+        "validation_start": "2023-05-04",
+        "validation_end": "2025-02-14",
+        "holdout_start": "2025-02-18",
+        "last": "2026-11-27"
       },
       "candidates_tested": 12,
       "eligible_candidates": 11,
@@ -1255,19 +1255,19 @@
           "return_pct": 7.2748,
           "max_drawdown_pct": -2.5804,
           "trades": 12,
-          "sharpe": 0.72631,
+          "sharpe": 0.72576,
           "win_rate_pct": 58.33333,
-          "benchmark_20pct_passive_pct": 1.6791,
-          "excess_vs_passive_pct": 5.5957
+          "benchmark_20pct_passive_pct": 1.5525,
+          "excess_vs_passive_pct": 5.7223
         },
         "validation": {
-          "return_pct": 0.6714,
+          "return_pct": 0.5353,
           "max_drawdown_pct": -2.2679,
           "trades": 6,
-          "sharpe": 0.1997,
+          "sharpe": 0.15876,
           "win_rate_pct": 50.0,
-          "benchmark_20pct_passive_pct": -1.6888,
-          "excess_vs_passive_pct": 2.3602
+          "benchmark_20pct_passive_pct": -1.5275,
+          "excess_vs_passive_pct": 2.0628
         },
         "holdout": {
           "return_pct": -3.9326,
@@ -1275,8 +1275,8 @@
           "trades": 4,
           "sharpe": -2.06432,
           "win_rate_pct": 0.0,
-          "benchmark_20pct_passive_pct": 6.4612,
-          "excess_vs_passive_pct": -10.3938
+          "benchmark_20pct_passive_pct": 6.5941,
+          "excess_vs_passive_pct": -10.5267
         },
         "stress": {
           "2": {
@@ -1285,8 +1285,8 @@
             "trades": 4,
             "sharpe": -2.11904,
             "win_rate_pct": 0.0,
-            "benchmark_20pct_passive_pct": 6.4612,
-            "excess_vs_passive_pct": -10.5688
+            "benchmark_20pct_passive_pct": 6.5941,
+            "excess_vs_passive_pct": -10.7017
           },
           "3": {
             "return_pct": -4.2823,
@@ -1294,8 +1294,8 @@
             "trades": 4,
             "sharpe": -2.16853,
             "win_rate_pct": 0.0,
-            "benchmark_20pct_passive_pct": 6.4612,
-            "excess_vs_passive_pct": -10.7435
+            "benchmark_20pct_passive_pct": 6.5941,
+            "excess_vs_passive_pct": -10.8764
           },
           "5": {
             "return_pct": -4.6311,
@@ -1303,8 +1303,8 @@
             "trades": 4,
             "sharpe": -2.25291,
             "win_rate_pct": 0.0,
-            "benchmark_20pct_passive_pct": 6.4612,
-            "excess_vs_passive_pct": -11.0923
+            "benchmark_20pct_passive_pct": 6.5941,
+            "excess_vs_passive_pct": -11.2252
           }
         },
         "gates": {
@@ -1317,23 +1317,23 @@
           "holdout_2x_cost_positive": false,
           "holdout_drawdown_below_15pct": true
         },
-        "selection_score": 2.51918
+        "selection_score": 2.24078
       },
       "status": "FAILED_ROBUSTNESS_GATES"
     },
     {
       "symbol": "TXN",
       "category": "Acciones EEUU",
-      "bars": 2236,
+      "bars": 2239,
       "first": "2018-01-02",
-      "last": "2026-11-23",
-      "ohlc_sha256": "716ab6f172a9f140b7269cdb94c89034c334af7df5b2b42d0f4e4d25990df931",
+      "last": "2026-11-27",
+      "ohlc_sha256": "26972780be85aff47d7515d27f2edf409f67aedc0e383c5aa9d333732ca8177a",
       "periods": {
-        "train_end": "2023-05-01",
-        "validation_start": "2023-05-02",
-        "validation_end": "2025-02-11",
-        "holdout_start": "2025-02-12",
-        "last": "2026-11-23"
+        "train_end": "2023-05-03",
+        "validation_start": "2023-05-04",
+        "validation_end": "2025-02-14",
+        "holdout_start": "2025-02-18",
+        "last": "2026-11-27"
       },
       "candidates_tested": 12,
       "eligible_candidates": 10,
@@ -1357,19 +1357,19 @@
           "return_pct": -1.9656,
           "max_drawdown_pct": -5.4359,
           "trades": 10,
-          "sharpe": -0.16259,
+          "sharpe": -0.16247,
           "win_rate_pct": 30.0,
-          "benchmark_20pct_passive_pct": 16.3409,
-          "excess_vs_passive_pct": -18.3065
+          "benchmark_20pct_passive_pct": 15.6149,
+          "excess_vs_passive_pct": -17.5805
         },
         "validation": {
           "return_pct": 4.0711,
           "max_drawdown_pct": -0.8991,
           "trades": 4,
-          "sharpe": 1.68416,
+          "sharpe": 1.68226,
           "win_rate_pct": 75.0,
-          "benchmark_20pct_passive_pct": 3.2027,
-          "excess_vs_passive_pct": 0.8684
+          "benchmark_20pct_passive_pct": 3.9314,
+          "excess_vs_passive_pct": 0.1397
         },
         "holdout": {
           "return_pct": 2.668,
@@ -1377,8 +1377,8 @@
           "trades": 6,
           "sharpe": 0.56951,
           "win_rate_pct": 50.0,
-          "benchmark_20pct_passive_pct": 13.8839,
-          "excess_vs_passive_pct": -11.2159
+          "benchmark_20pct_passive_pct": 11.6591,
+          "excess_vs_passive_pct": -8.9911
         },
         "stress": {
           "2": {
@@ -1387,17 +1387,17 @@
             "trades": 6,
             "sharpe": 0.50754,
             "win_rate_pct": 50.0,
-            "benchmark_20pct_passive_pct": 13.8839,
-            "excess_vs_passive_pct": -11.5141
+            "benchmark_20pct_passive_pct": 11.6591,
+            "excess_vs_passive_pct": -9.2893
           },
           "3": {
             "return_pct": 2.0722,
             "max_drawdown_pct": -4.507,
             "trades": 6,
-            "sharpe": 0.44542,
+            "sharpe": 0.44543,
             "win_rate_pct": 50.0,
-            "benchmark_20pct_passive_pct": 13.8839,
-            "excess_vs_passive_pct": -11.8117
+            "benchmark_20pct_passive_pct": 11.6591,
+            "excess_vs_passive_pct": -9.5868
           },
           "5": {
             "return_pct": 1.4792,
@@ -1405,8 +1405,8 @@
             "trades": 6,
             "sharpe": 0.3212,
             "win_rate_pct": 50.0,
-            "benchmark_20pct_passive_pct": 13.8839,
-            "excess_vs_passive_pct": -12.4048
+            "benchmark_20pct_passive_pct": 11.6591,
+            "excess_vs_passive_pct": -10.1799
           }
         },
         "gates": {
@@ -1419,23 +1419,23 @@
           "holdout_2x_cost_positive": true,
           "holdout_drawdown_below_15pct": true
         },
-        "selection_score": -2.44914
+        "selection_score": -3.06894
       },
       "status": "FAILED_ROBUSTNESS_GATES"
     },
     {
       "symbol": "USO",
       "category": "Bonos materias primas REIT",
-      "bars": 2236,
+      "bars": 2239,
       "first": "2018-01-02",
-      "last": "2026-11-23",
-      "ohlc_sha256": "92afe0d2b73fe39911b2bd3aefcab17c518f1ab8bc4b36ae50e70678373454aa",
+      "last": "2026-11-27",
+      "ohlc_sha256": "247f89b134e1c1484c07240b813efaec0c000b1b04b05ba086de70261a9aee9a",
       "periods": {
-        "train_end": "2023-05-01",
-        "validation_start": "2023-05-02",
-        "validation_end": "2025-02-11",
-        "holdout_start": "2025-02-12",
-        "last": "2026-11-23"
+        "train_end": "2023-05-03",
+        "validation_start": "2023-05-04",
+        "validation_end": "2025-02-14",
+        "holdout_start": "2025-02-18",
+        "last": "2026-11-27"
       },
       "candidates_tested": 12,
       "eligible_candidates": 11,
@@ -1459,19 +1459,19 @@
           "return_pct": 1.7938,
           "max_drawdown_pct": -5.0539,
           "trades": 6,
-          "sharpe": 0.20107,
+          "sharpe": 0.20092,
           "win_rate_pct": 33.33333,
-          "benchmark_20pct_passive_pct": -6.2158,
-          "excess_vs_passive_pct": 8.0096
+          "benchmark_20pct_passive_pct": -7.5083,
+          "excess_vs_passive_pct": 9.3021
         },
         "validation": {
-          "return_pct": 4.7885,
+          "return_pct": 4.1276,
           "max_drawdown_pct": -2.256,
           "trades": 4,
-          "sharpe": 1.23065,
-          "win_rate_pct": 75.0,
-          "benchmark_20pct_passive_pct": 4.8279,
-          "excess_vs_passive_pct": -0.0394
+          "sharpe": 1.04551,
+          "win_rate_pct": 50.0,
+          "benchmark_20pct_passive_pct": 4.9819,
+          "excess_vs_passive_pct": -0.8543
         },
         "holdout": {
           "return_pct": 1.1142,
@@ -1479,8 +1479,8 @@
           "trades": 3,
           "sharpe": 0.23925,
           "win_rate_pct": 33.33333,
-          "benchmark_20pct_passive_pct": 14.9476,
-          "excess_vs_passive_pct": -13.8333
+          "benchmark_20pct_passive_pct": 15.803,
+          "excess_vs_passive_pct": -14.6888
         },
         "stress": {
           "2": {
@@ -1489,8 +1489,8 @@
             "trades": 3,
             "sharpe": 0.20829,
             "win_rate_pct": 33.33333,
-            "benchmark_20pct_passive_pct": 14.9476,
-            "excess_vs_passive_pct": -13.9891
+            "benchmark_20pct_passive_pct": 15.803,
+            "excess_vs_passive_pct": -14.8445
           },
           "3": {
             "return_pct": 0.803,
@@ -1498,8 +1498,8 @@
             "trades": 3,
             "sharpe": 0.17715,
             "win_rate_pct": 33.33333,
-            "benchmark_20pct_passive_pct": 14.9476,
-            "excess_vs_passive_pct": -14.1446
+            "benchmark_20pct_passive_pct": 15.803,
+            "excess_vs_passive_pct": -15.0
           },
           "5": {
             "return_pct": 0.4925,
@@ -1507,8 +1507,8 @@
             "trades": 3,
             "sharpe": 0.11439,
             "win_rate_pct": 33.33333,
-            "benchmark_20pct_passive_pct": 14.9476,
-            "excess_vs_passive_pct": -14.455
+            "benchmark_20pct_passive_pct": 15.803,
+            "excess_vs_passive_pct": -15.3105
           }
         },
         "gates": {
@@ -1521,23 +1521,23 @@
           "holdout_2x_cost_positive": true,
           "holdout_drawdown_below_15pct": true
         },
-        "selection_score": 0.3355
+        "selection_score": -0.25248
       },
       "status": "FAILED_ROBUSTNESS_GATES"
     },
     {
       "symbol": "SU.PA",
       "category": "Acciones Europa",
-      "bars": 2275,
+      "bars": 2280,
       "first": "2018-01-02",
-      "last": "2026-11-20",
-      "ohlc_sha256": "0f6f547ea1309a924d9162a8ac956949ab640a4b6d3658dd0f42cd04160ff066",
+      "last": "2026-11-27",
+      "ohlc_sha256": "3dcafe2ecab497e53a76201f28434545ed884286a24b77e9a615c785a9dde0c7",
       "periods": {
-        "train_end": "2023-05-02",
-        "validation_start": "2023-05-03",
-        "validation_end": "2025-02-10",
-        "holdout_start": "2025-02-11",
-        "last": "2026-11-20"
+        "train_end": "2023-05-05",
+        "validation_start": "2023-05-08",
+        "validation_end": "2025-02-14",
+        "holdout_start": "2025-02-17",
+        "last": "2026-11-27"
       },
       "candidates_tested": 12,
       "eligible_candidates": 10,
@@ -1561,56 +1561,56 @@
           "return_pct": 7.4682,
           "max_drawdown_pct": -1.777,
           "trades": 4,
-          "sharpe": 0.8539,
+          "sharpe": 0.85296,
           "win_rate_pct": 75.0,
-          "benchmark_20pct_passive_pct": 29.6584,
-          "excess_vs_passive_pct": -22.1902
+          "benchmark_20pct_passive_pct": 30.4923,
+          "excess_vs_passive_pct": -23.0241
         },
         "validation": {
           "return_pct": 5.3421,
           "max_drawdown_pct": -1.3984,
           "trades": 3,
-          "sharpe": 1.15266,
+          "sharpe": 1.15139,
           "win_rate_pct": 66.66667,
-          "benchmark_20pct_passive_pct": 11.7809,
-          "excess_vs_passive_pct": -6.4388
+          "benchmark_20pct_passive_pct": 12.1536,
+          "excess_vs_passive_pct": -6.8115
         },
         "holdout": {
           "return_pct": -0.882,
           "max_drawdown_pct": -4.2682,
           "trades": 6,
-          "sharpe": -0.09868,
+          "sharpe": -0.09857,
           "win_rate_pct": 33.33333,
-          "benchmark_20pct_passive_pct": -0.8128,
-          "excess_vs_passive_pct": -0.0692
+          "benchmark_20pct_passive_pct": -1.4871,
+          "excess_vs_passive_pct": 0.6051
         },
         "stress": {
           "2": {
             "return_pct": -1.1764,
             "max_drawdown_pct": -4.3788,
             "trades": 6,
-            "sharpe": -0.13834,
+            "sharpe": -0.13819,
             "win_rate_pct": 33.33333,
-            "benchmark_20pct_passive_pct": -0.8128,
-            "excess_vs_passive_pct": -0.3635
+            "benchmark_20pct_passive_pct": -1.4871,
+            "excess_vs_passive_pct": 0.3107
           },
           "3": {
             "return_pct": -1.4698,
             "max_drawdown_pct": -4.4893,
             "trades": 6,
-            "sharpe": -0.1778,
+            "sharpe": -0.1776,
             "win_rate_pct": 33.33333,
-            "benchmark_20pct_passive_pct": -0.8128,
-            "excess_vs_passive_pct": -0.657
+            "benchmark_20pct_passive_pct": -1.4871,
+            "excess_vs_passive_pct": 0.0172
           },
           "5": {
             "return_pct": -2.0543,
             "max_drawdown_pct": -4.71,
             "trades": 6,
-            "sharpe": -0.25595,
+            "sharpe": -0.25567,
             "win_rate_pct": 33.33333,
-            "benchmark_20pct_passive_pct": -0.8128,
-            "excess_vs_passive_pct": -1.2414
+            "benchmark_20pct_passive_pct": -1.4871,
+            "excess_vs_passive_pct": -0.5672
           }
         },
         "gates": {
@@ -1618,28 +1618,28 @@
           "validation_beats_passive": false,
           "validation_drawdown_below_15pct": true,
           "holdout_positive": false,
-          "holdout_beats_passive": false,
+          "holdout_beats_passive": true,
           "holdout_trades_at_least_5": true,
           "holdout_2x_cost_positive": false,
           "holdout_drawdown_below_15pct": true
         },
-        "selection_score": -10.18685
+        "selection_score": -10.68464
       },
       "status": "FAILED_ROBUSTNESS_GATES"
     },
     {
       "symbol": "EWY",
       "category": "ETF globales e indices",
-      "bars": 2234,
+      "bars": 2238,
       "first": "2018-01-02",
-      "last": "2026-11-23",
-      "ohlc_sha256": "b2b8136b3c60a49335dfba3aa3fa3a62145d49daa12f1350212823e90583ba9b",
+      "last": "2026-11-27",
+      "ohlc_sha256": "229df45b64172a6584ded1b48a4b8b189f16a96ddd05ed6a8ff1ba17acb900ad",
       "periods": {
-        "train_end": "2023-05-01",
-        "validation_start": "2023-05-02",
-        "validation_end": "2025-02-12",
-        "holdout_start": "2025-02-13",
-        "last": "2026-11-23"
+        "train_end": "2023-05-02",
+        "validation_start": "2023-05-03",
+        "validation_end": "2025-02-14",
+        "holdout_start": "2025-02-18",
+        "last": "2026-11-27"
       },
       "candidates_tested": 12,
       "eligible_candidates": 11,
@@ -1660,59 +1660,59 @@
           "breakout": 20
         },
         "train": {
-          "return_pct": 0.5941,
-          "max_drawdown_pct": -2.6005,
+          "return_pct": 0.5942,
+          "max_drawdown_pct": -2.6004,
           "trades": 15,
-          "sharpe": 0.09916,
+          "sharpe": 0.0991,
           "win_rate_pct": 33.33333,
-          "benchmark_20pct_passive_pct": -2.8583,
-          "excess_vs_passive_pct": 3.4524
+          "benchmark_20pct_passive_pct": -2.8213,
+          "excess_vs_passive_pct": 3.4155
         },
         "validation": {
           "return_pct": 2.6187,
           "max_drawdown_pct": -1.5149,
           "trades": 7,
-          "sharpe": 0.9117,
+          "sharpe": 0.91068,
           "win_rate_pct": 57.14286,
-          "benchmark_20pct_passive_pct": -0.8103,
-          "excess_vs_passive_pct": 3.429
+          "benchmark_20pct_passive_pct": -0.1764,
+          "excess_vs_passive_pct": 2.7952
         },
         "holdout": {
-          "return_pct": -1.3588,
+          "return_pct": -0.3251,
           "max_drawdown_pct": -2.2133,
-          "trades": 4,
-          "sharpe": -0.35553,
-          "win_rate_pct": 25.0,
-          "benchmark_20pct_passive_pct": 29.2523,
-          "excess_vs_passive_pct": -30.6111
+          "trades": 3,
+          "sharpe": -0.08288,
+          "win_rate_pct": 33.33333,
+          "benchmark_20pct_passive_pct": 28.3675,
+          "excess_vs_passive_pct": -28.6926
         },
         "stress": {
           "2": {
-            "return_pct": -0.883,
+            "return_pct": -0.3262,
             "max_drawdown_pct": -2.232,
-            "trades": 4,
-            "sharpe": -0.22868,
-            "win_rate_pct": 25.0,
-            "benchmark_20pct_passive_pct": 29.2523,
-            "excess_vs_passive_pct": -30.1353
+            "trades": 3,
+            "sharpe": -0.08227,
+            "win_rate_pct": 33.33333,
+            "benchmark_20pct_passive_pct": 28.3675,
+            "excess_vs_passive_pct": -28.6937
           },
           "3": {
-            "return_pct": -1.0804,
+            "return_pct": -0.4756,
             "max_drawdown_pct": -2.2506,
-            "trades": 4,
-            "sharpe": -0.28113,
-            "win_rate_pct": 25.0,
-            "benchmark_20pct_passive_pct": 29.2523,
-            "excess_vs_passive_pct": -30.3327
+            "trades": 3,
+            "sharpe": -0.12421,
+            "win_rate_pct": 33.33333,
+            "benchmark_20pct_passive_pct": 28.3675,
+            "excess_vs_passive_pct": -28.8431
           },
           "5": {
-            "return_pct": -1.4739,
+            "return_pct": -0.7737,
             "max_drawdown_pct": -2.2879,
-            "trades": 4,
-            "sharpe": -0.38396,
-            "win_rate_pct": 25.0,
-            "benchmark_20pct_passive_pct": 29.2523,
-            "excess_vs_passive_pct": -30.7262
+            "trades": 3,
+            "sharpe": -0.20701,
+            "win_rate_pct": 33.33333,
+            "benchmark_20pct_passive_pct": 28.3675,
+            "excess_vs_passive_pct": -29.1412
           }
         },
         "gates": {
@@ -1725,23 +1725,23 @@
           "holdout_2x_cost_positive": false,
           "holdout_drawdown_below_15pct": true
         },
-        "selection_score": 3.39116
+        "selection_score": 2.75183
       },
       "status": "FAILED_ROBUSTNESS_GATES"
     },
     {
       "symbol": "HBAR-USD",
       "category": "Cripto",
-      "bars": 2626,
+      "bars": 2630,
       "first": "2019-09-17",
-      "last": "2026-11-24",
-      "ohlc_sha256": "5aae771fc94022622f1ebfa824176d4eb597191fa6614c68c9302546cf49f866",
+      "last": "2026-11-28",
+      "ohlc_sha256": "9cfad313d635c8ff0822d330177c2c0797119e354d972f27f0dfc914c0f4482d",
       "periods": {
-        "train_end": "2024-01-08",
-        "validation_start": "2024-01-09",
-        "validation_end": "2025-06-16",
-        "holdout_start": "2025-06-17",
-        "last": "2026-11-24"
+        "train_end": "2024-01-11",
+        "validation_start": "2024-01-12",
+        "validation_end": "2025-06-20",
+        "holdout_start": "2025-06-21",
+        "last": "2026-11-28"
       },
       "candidates_tested": 12,
       "eligible_candidates": 10,
@@ -1765,19 +1765,19 @@
           "return_pct": 4.682,
           "max_drawdown_pct": -4.0008,
           "trades": 19,
-          "sharpe": 0.31087,
+          "sharpe": 0.31057,
           "win_rate_pct": 36.84211,
-          "benchmark_20pct_passive_pct": -1.9082,
-          "excess_vs_passive_pct": 6.5902
+          "benchmark_20pct_passive_pct": -1.3083,
+          "excess_vs_passive_pct": 5.9903
         },
         "validation": {
           "return_pct": 6.271,
           "max_drawdown_pct": -3.6168,
           "trades": 10,
-          "sharpe": 0.84277,
+          "sharpe": 0.84197,
           "win_rate_pct": 40.0,
-          "benchmark_20pct_passive_pct": 19.6299,
-          "excess_vs_passive_pct": -13.3589
+          "benchmark_20pct_passive_pct": 16.1258,
+          "excess_vs_passive_pct": -9.8547
         },
         "holdout": {
           "return_pct": 4.5031,
@@ -1785,8 +1785,8 @@
           "trades": 4,
           "sharpe": 0.78301,
           "win_rate_pct": 50.0,
-          "benchmark_20pct_passive_pct": -12.9937,
-          "excess_vs_passive_pct": 17.4968
+          "benchmark_20pct_passive_pct": -12.3158,
+          "excess_vs_passive_pct": 16.8189
         },
         "stress": {
           "2": {
@@ -1795,8 +1795,8 @@
             "trades": 4,
             "sharpe": 0.76666,
             "win_rate_pct": 50.0,
-            "benchmark_20pct_passive_pct": -12.9937,
-            "excess_vs_passive_pct": 17.3858
+            "benchmark_20pct_passive_pct": -12.3158,
+            "excess_vs_passive_pct": 16.7079
           },
           "3": {
             "return_pct": 4.2811,
@@ -1804,8 +1804,8 @@
             "trades": 4,
             "sharpe": 0.75015,
             "win_rate_pct": 50.0,
-            "benchmark_20pct_passive_pct": -12.9937,
-            "excess_vs_passive_pct": 17.2748
+            "benchmark_20pct_passive_pct": -12.3158,
+            "excess_vs_passive_pct": 16.597
           },
           "5": {
             "return_pct": 4.0594,
@@ -1813,8 +1813,8 @@
             "trades": 4,
             "sharpe": 0.7167,
             "win_rate_pct": 50.0,
-            "benchmark_20pct_passive_pct": -12.9937,
-            "excess_vs_passive_pct": 17.053
+            "benchmark_20pct_passive_pct": -12.3158,
+            "excess_vs_passive_pct": 16.3752
           }
         },
         "gates": {
@@ -1827,23 +1827,23 @@
           "holdout_2x_cost_positive": true,
           "holdout_drawdown_below_15pct": true
         },
-        "selection_score": -13.53486
+        "selection_score": -10.12064
       },
       "status": "FAILED_ROBUSTNESS_GATES"
     },
     {
       "symbol": "RIO.AX",
       "category": "Acciones Asia Pacifico",
-      "bars": 2252,
+      "bars": 2253,
       "first": "2018-01-02",
-      "last": "2026-11-24",
-      "ohlc_sha256": "84d0203c7ccce660995415f6ffb3832e41c1ac1feaea958bece552250f1fd633",
+      "last": "2026-11-27",
+      "ohlc_sha256": "8a9fa6b282a5c0f89309ce6c9074aae33867420c692aea65fef088b32fb83d33",
       "periods": {
-        "train_end": "2023-05-09",
-        "validation_start": "2023-05-10",
-        "validation_end": "2025-02-14",
-        "holdout_start": "2025-02-17",
-        "last": "2026-11-24"
+        "train_end": "2023-05-11",
+        "validation_start": "2023-05-12",
+        "validation_end": "2025-02-19",
+        "holdout_start": "2025-02-20",
+        "last": "2026-11-27"
       },
       "candidates_tested": 12,
       "eligible_candidates": 11,
@@ -1864,22 +1864,22 @@
           "breakout": 20
         },
         "train": {
-          "return_pct": 5.69,
-          "max_drawdown_pct": -2.9144,
+          "return_pct": 5.6898,
+          "max_drawdown_pct": -2.9145,
           "trades": 16,
-          "sharpe": 0.6234,
+          "sharpe": 0.62338,
           "win_rate_pct": 50.0,
-          "benchmark_20pct_passive_pct": 24.9527,
-          "excess_vs_passive_pct": -19.2628
+          "benchmark_20pct_passive_pct": 23.9725,
+          "excess_vs_passive_pct": -18.2828
         },
         "validation": {
-          "return_pct": -0.5078,
+          "return_pct": -0.3788,
           "max_drawdown_pct": -2.1595,
           "trades": 9,
-          "sharpe": -0.16228,
+          "sharpe": -0.11809,
           "win_rate_pct": 33.33333,
-          "benchmark_20pct_passive_pct": 3.6495,
-          "excess_vs_passive_pct": -4.1574
+          "benchmark_20pct_passive_pct": 4.4543,
+          "excess_vs_passive_pct": -4.8331
         },
         "holdout": {
           "return_pct": 0.6322,
@@ -1887,8 +1887,8 @@
           "trades": 5,
           "sharpe": 0.17405,
           "win_rate_pct": 40.0,
-          "benchmark_20pct_passive_pct": 4.9566,
-          "excess_vs_passive_pct": -4.3243
+          "benchmark_20pct_passive_pct": 5.8698,
+          "excess_vs_passive_pct": -5.2376
         },
         "stress": {
           "2": {
@@ -1897,8 +1897,8 @@
             "trades": 5,
             "sharpe": 0.10096,
             "win_rate_pct": 40.0,
-            "benchmark_20pct_passive_pct": 4.9566,
-            "excess_vs_passive_pct": -4.6069
+            "benchmark_20pct_passive_pct": 5.8698,
+            "excess_vs_passive_pct": -5.5202
           },
           "3": {
             "return_pct": 0.3927,
@@ -1906,8 +1906,8 @@
             "trades": 5,
             "sharpe": 0.10763,
             "win_rate_pct": 40.0,
-            "benchmark_20pct_passive_pct": 4.9566,
-            "excess_vs_passive_pct": -4.5638
+            "benchmark_20pct_passive_pct": 5.8698,
+            "excess_vs_passive_pct": -5.4771
           },
           "5": {
             "return_pct": -0.1813,
@@ -1915,8 +1915,8 @@
             "trades": 5,
             "sharpe": -0.03326,
             "win_rate_pct": 40.0,
-            "benchmark_20pct_passive_pct": 4.9566,
-            "excess_vs_passive_pct": -5.1378
+            "benchmark_20pct_passive_pct": 5.8698,
+            "excess_vs_passive_pct": -6.0511
           }
         },
         "gates": {
@@ -1929,23 +1929,23 @@
           "holdout_2x_cost_positive": true,
           "holdout_drawdown_below_15pct": true
         },
-        "selection_score": -7.69467
+        "selection_score": -8.22337
       },
       "status": "FAILED_ROBUSTNESS_GATES"
     },
     {
       "symbol": "GC=F",
       "category": "Bonos materias primas REIT",
-      "bars": 2239,
+      "bars": 2241,
       "first": "2018-01-02",
-      "last": "2026-11-24",
-      "ohlc_sha256": "dd8fd0ce9e20e18aa454e4c2a125fb7606a32811176e17e18e0f7b986ea9c1c8",
+      "last": "2026-11-27",
+      "ohlc_sha256": "dfb8925548cdb1e7eb2020339a611838b47b1fd7a8b2cfc7fa1703d96a3f50c5",
       "periods": {
-        "train_end": "2023-05-04",
-        "validation_start": "2023-05-05",
-        "validation_end": "2025-02-13",
-        "holdout_start": "2025-02-14",
-        "last": "2026-11-24"
+        "train_end": "2023-05-05",
+        "validation_start": "2023-05-08",
+        "validation_end": "2025-02-14",
+        "holdout_start": "2025-02-18",
+        "last": "2026-11-27"
       },
       "candidates_tested": 12,
       "eligible_candidates": 11,
@@ -1966,13 +1966,13 @@
           "breakout": 55
         },
         "train": {
-          "return_pct": 6.3461,
+          "return_pct": 6.0247,
           "max_drawdown_pct": -2.2553,
           "trades": 17,
-          "sharpe": 0.76243,
-          "win_rate_pct": 58.82353,
-          "benchmark_20pct_passive_pct": 11.2963,
-          "excess_vs_passive_pct": -4.9502
+          "sharpe": 0.72154,
+          "win_rate_pct": 52.94118,
+          "benchmark_20pct_passive_pct": 10.8259,
+          "excess_vs_passive_pct": -4.8012
         },
         "validation": {
           "return_pct": 3.0385,
@@ -1980,45 +1980,45 @@
           "trades": 8,
           "sharpe": 1.14147,
           "win_rate_pct": 50.0,
-          "benchmark_20pct_passive_pct": 9.0932,
-          "excess_vs_passive_pct": -6.0548
+          "benchmark_20pct_passive_pct": 8.5333,
+          "excess_vs_passive_pct": -5.4949
         },
         "holdout": {
           "return_pct": 2.4792,
           "max_drawdown_pct": -2.9347,
           "trades": 10,
-          "sharpe": 0.52186,
+          "sharpe": 0.52128,
           "win_rate_pct": 40.0,
-          "benchmark_20pct_passive_pct": 4.9781,
-          "excess_vs_passive_pct": -2.4989
+          "benchmark_20pct_passive_pct": 4.6836,
+          "excess_vs_passive_pct": -2.2044
         },
         "stress": {
           "2": {
             "return_pct": 1.9445,
             "max_drawdown_pct": -3.029,
             "trades": 10,
-            "sharpe": 0.41386,
+            "sharpe": 0.41339,
             "win_rate_pct": 40.0,
-            "benchmark_20pct_passive_pct": 4.9781,
-            "excess_vs_passive_pct": -3.0336
+            "benchmark_20pct_passive_pct": 4.6836,
+            "excess_vs_passive_pct": -2.7392
           },
           "3": {
             "return_pct": 1.4046,
             "max_drawdown_pct": -2.9885,
             "trades": 10,
-            "sharpe": 0.30121,
+            "sharpe": 0.30087,
             "win_rate_pct": 40.0,
-            "benchmark_20pct_passive_pct": 4.9781,
-            "excess_vs_passive_pct": -3.5736
+            "benchmark_20pct_passive_pct": 4.6836,
+            "excess_vs_passive_pct": -3.2791
           },
           "5": {
             "return_pct": 0.3483,
             "max_drawdown_pct": -3.177,
             "trades": 10,
-            "sharpe": 0.08502,
+            "sharpe": 0.08493,
             "win_rate_pct": 40.0,
-            "benchmark_20pct_passive_pct": 4.9781,
-            "excess_vs_passive_pct": -4.6298
+            "benchmark_20pct_passive_pct": 4.6836,
+            "excess_vs_passive_pct": -4.3353
           }
         },
         "gates": {
@@ -2031,23 +2031,23 @@
           "holdout_2x_cost_positive": true,
           "holdout_drawdown_below_15pct": true
         },
-        "selection_score": -7.14248
+        "selection_score": -6.56023
       },
       "status": "FAILED_ROBUSTNESS_GATES"
     },
     {
       "symbol": "XLF",
       "category": "ETF globales e indices",
-      "bars": 2235,
+      "bars": 2238,
       "first": "2018-01-02",
-      "last": "2026-11-23",
-      "ohlc_sha256": "adb5e8b51a349428da28ca8ceaaabd7781afbadbc6e1bc243a59c8d35c6b0f6f",
+      "last": "2026-11-27",
+      "ohlc_sha256": "bb86938c52052298e331ba90b5b8d46102672502fd1f4f4618b8907d346fd0cd",
       "periods": {
-        "train_end": "2023-05-02",
-        "validation_start": "2023-05-03",
-        "validation_end": "2025-02-12",
-        "holdout_start": "2025-02-13",
-        "last": "2026-11-23"
+        "train_end": "2023-05-03",
+        "validation_start": "2023-05-04",
+        "validation_end": "2025-02-14",
+        "holdout_start": "2025-02-18",
+        "last": "2026-11-27"
       },
       "candidates_tested": 12,
       "eligible_candidates": 9,
@@ -2071,56 +2071,56 @@
           "return_pct": -2.6418,
           "max_drawdown_pct": -4.4173,
           "trades": 30,
-          "sharpe": -0.26299,
+          "sharpe": -0.26289,
           "win_rate_pct": 26.66667,
-          "benchmark_20pct_passive_pct": 5.793,
-          "excess_vs_passive_pct": -8.4348
+          "benchmark_20pct_passive_pct": 5.4978,
+          "excess_vs_passive_pct": -8.1396
         },
         "validation": {
-          "return_pct": 4.5323,
+          "return_pct": 4.7153,
           "max_drawdown_pct": -0.8039,
           "trades": 16,
-          "sharpe": 1.58033,
+          "sharpe": 1.6388,
           "win_rate_pct": 62.5,
-          "benchmark_20pct_passive_pct": 13.1011,
-          "excess_vs_passive_pct": -8.5688
+          "benchmark_20pct_passive_pct": 13.8186,
+          "excess_vs_passive_pct": -9.1032
         },
         "holdout": {
-          "return_pct": 0.7097,
-          "max_drawdown_pct": -1.204,
-          "trades": 10,
-          "sharpe": 0.26672,
-          "win_rate_pct": 50.0,
-          "benchmark_20pct_passive_pct": 2.0947,
-          "excess_vs_passive_pct": -1.385
+          "return_pct": 0.0241,
+          "max_drawdown_pct": -1.8765,
+          "trades": 11,
+          "sharpe": 0.01651,
+          "win_rate_pct": 45.45455,
+          "benchmark_20pct_passive_pct": 2.4897,
+          "excess_vs_passive_pct": -2.4656
         },
         "stress": {
           "2": {
-            "return_pct": 0.1385,
-            "max_drawdown_pct": -1.4401,
-            "trades": 10,
-            "sharpe": 0.05806,
-            "win_rate_pct": 40.0,
-            "benchmark_20pct_passive_pct": 2.0947,
-            "excess_vs_passive_pct": -1.9561
+            "return_pct": -0.3876,
+            "max_drawdown_pct": -1.9579,
+            "trades": 11,
+            "sharpe": -0.13173,
+            "win_rate_pct": 36.36364,
+            "benchmark_20pct_passive_pct": 2.4897,
+            "excess_vs_passive_pct": -2.8773
           },
           "3": {
-            "return_pct": -0.4293,
-            "max_drawdown_pct": -1.7329,
-            "trades": 10,
-            "sharpe": -0.14671,
-            "win_rate_pct": 30.0,
-            "benchmark_20pct_passive_pct": 2.0947,
-            "excess_vs_passive_pct": -2.5239
+            "return_pct": -1.0013,
+            "max_drawdown_pct": -2.2974,
+            "trades": 11,
+            "sharpe": -0.34891,
+            "win_rate_pct": 27.27273,
+            "benchmark_20pct_passive_pct": 2.4897,
+            "excess_vs_passive_pct": -3.491
           },
           "5": {
-            "return_pct": -1.555,
-            "max_drawdown_pct": -2.3441,
-            "trades": 10,
-            "sharpe": -0.53652,
-            "win_rate_pct": 30.0,
-            "benchmark_20pct_passive_pct": 2.0947,
-            "excess_vs_passive_pct": -3.6496
+            "return_pct": -2.2171,
+            "max_drawdown_pct": -3.0009,
+            "trades": 11,
+            "sharpe": -0.75791,
+            "win_rate_pct": 27.27273,
+            "benchmark_20pct_passive_pct": 2.4897,
+            "excess_vs_passive_pct": -4.7069
           }
         },
         "gates": {
@@ -2130,26 +2130,26 @@
           "holdout_positive": true,
           "holdout_beats_passive": false,
           "holdout_trades_at_least_5": true,
-          "holdout_2x_cost_positive": true,
+          "holdout_2x_cost_positive": false,
           "holdout_drawdown_below_15pct": true
         },
-        "selection_score": -10.43389
+        "selection_score": -10.93317
       },
       "status": "FAILED_ROBUSTNESS_GATES"
     },
     {
       "symbol": "NG=F",
       "category": "Bonos materias primas REIT",
-      "bars": 2240,
+      "bars": 2242,
       "first": "2018-01-02",
-      "last": "2026-11-24",
-      "ohlc_sha256": "23c3ae46855d64e7517d6506b287a6d7d7452608320d748cc1257b7ef7b2bf79",
+      "last": "2026-11-27",
+      "ohlc_sha256": "333b307f05dc0e424135487d00d0a1dda7e716e5494860cb58c51324c6dca518",
       "periods": {
-        "train_end": "2023-05-04",
-        "validation_start": "2023-05-05",
-        "validation_end": "2025-02-13",
-        "holdout_start": "2025-02-14",
-        "last": "2026-11-24"
+        "train_end": "2023-05-05",
+        "validation_start": "2023-05-08",
+        "validation_end": "2025-02-14",
+        "holdout_start": "2025-02-18",
+        "last": "2026-11-27"
       },
       "candidates_tested": 12,
       "eligible_candidates": 11,
@@ -2173,10 +2173,10 @@
           "return_pct": 3.6542,
           "max_drawdown_pct": -5.6318,
           "trades": 41,
-          "sharpe": 0.22459,
+          "sharpe": 0.2245,
           "win_rate_pct": 43.90244,
-          "benchmark_20pct_passive_pct": -6.25,
-          "excess_vs_passive_pct": 9.9042
+          "benchmark_20pct_passive_pct": -6.0144,
+          "excess_vs_passive_pct": 9.6686
         },
         "validation": {
           "return_pct": 4.6813,
@@ -2184,45 +2184,45 @@
           "trades": 15,
           "sharpe": 0.7196,
           "win_rate_pct": 46.66667,
-          "benchmark_20pct_passive_pct": 13.9541,
-          "excess_vs_passive_pct": -9.2728
+          "benchmark_20pct_passive_pct": 13.2887,
+          "excess_vs_passive_pct": -8.6073
         },
         "holdout": {
-          "return_pct": -3.6845,
+          "return_pct": -5.1168,
           "max_drawdown_pct": -6.0609,
           "trades": 14,
-          "sharpe": -0.56646,
-          "win_rate_pct": 28.57143,
-          "benchmark_20pct_passive_pct": -0.7946,
-          "excess_vs_passive_pct": -2.8899
+          "sharpe": -0.84692,
+          "win_rate_pct": 21.42857,
+          "benchmark_20pct_passive_pct": -2.5755,
+          "excess_vs_passive_pct": -2.5413
         },
         "stress": {
           "2": {
-            "return_pct": -4.1622,
+            "return_pct": -5.5859,
             "max_drawdown_pct": -6.4909,
             "trades": 14,
-            "sharpe": -0.6437,
-            "win_rate_pct": 28.57143,
-            "benchmark_20pct_passive_pct": -0.7946,
-            "excess_vs_passive_pct": -3.3676
+            "sharpe": -0.92663,
+            "win_rate_pct": 21.42857,
+            "benchmark_20pct_passive_pct": -2.5755,
+            "excess_vs_passive_pct": -3.0104
           },
           "3": {
-            "return_pct": -4.6378,
+            "return_pct": -6.053,
             "max_drawdown_pct": -6.9192,
             "trades": 14,
-            "sharpe": -0.72066,
-            "win_rate_pct": 28.57143,
-            "benchmark_20pct_passive_pct": -0.7946,
-            "excess_vs_passive_pct": -3.8432
+            "sharpe": -1.00562,
+            "win_rate_pct": 21.42857,
+            "benchmark_20pct_passive_pct": -2.5755,
+            "excess_vs_passive_pct": -3.4775
           },
           "5": {
-            "return_pct": -5.5828,
+            "return_pct": -6.981,
             "max_drawdown_pct": -7.7708,
             "trades": 14,
-            "sharpe": -0.8733,
-            "win_rate_pct": 28.57143,
-            "benchmark_20pct_passive_pct": -0.7946,
-            "excess_vs_passive_pct": -4.7882
+            "sharpe": -1.1611,
+            "win_rate_pct": 21.42857,
+            "benchmark_20pct_passive_pct": -2.5755,
+            "excess_vs_passive_pct": -4.4055
           }
         },
         "gates": {
@@ -2235,23 +2235,23 @@
           "holdout_2x_cost_positive": false,
           "holdout_drawdown_below_15pct": true
         },
-        "selection_score": -8.68419
+        "selection_score": -8.05403
       },
       "status": "FAILED_ROBUSTNESS_GATES"
     },
     {
       "symbol": "ZW=F",
       "category": "Bonos materias primas REIT",
-      "bars": 2238,
+      "bars": 2240,
       "first": "2018-01-02",
-      "last": "2026-11-24",
-      "ohlc_sha256": "d501e5c91fda1a65dc3e1dce7a12d0ef70a59a74a8efdbcb885e74a09a4a0c9a",
+      "last": "2026-11-27",
+      "ohlc_sha256": "1d20a0bd349d39f2fb7d1d43e42fc947adb1b3a0388a5fe802e66c2a8a126cee",
       "periods": {
-        "train_end": "2023-05-02",
-        "validation_start": "2023-05-03",
-        "validation_end": "2025-02-12",
-        "holdout_start": "2025-02-13",
-        "last": "2026-11-24"
+        "train_end": "2023-05-04",
+        "validation_start": "2023-05-05",
+        "validation_end": "2025-02-14",
+        "holdout_start": "2025-02-18",
+        "last": "2026-11-27"
       },
       "candidates_tested": 12,
       "eligible_candidates": 9,
@@ -2275,56 +2275,56 @@
           "return_pct": -2.3575,
           "max_drawdown_pct": -4.6495,
           "trades": 42,
-          "sharpe": -0.14834,
+          "sharpe": -0.14823,
           "win_rate_pct": 28.57143,
-          "benchmark_20pct_passive_pct": 7.474,
-          "excess_vs_passive_pct": -9.8316
+          "benchmark_20pct_passive_pct": 9.1349,
+          "excess_vs_passive_pct": -11.4925
         },
         "validation": {
-          "return_pct": 1.8922,
+          "return_pct": 2.8009,
           "max_drawdown_pct": -2.5892,
           "trades": 12,
-          "sharpe": 0.38698,
-          "win_rate_pct": 41.66667,
-          "benchmark_20pct_passive_pct": -1.6607,
-          "excess_vs_passive_pct": 3.5529
+          "sharpe": 0.55362,
+          "win_rate_pct": 50.0,
+          "benchmark_20pct_passive_pct": -1.4529,
+          "excess_vs_passive_pct": 4.2538
         },
         "holdout": {
-          "return_pct": -2.6315,
-          "max_drawdown_pct": -3.746,
+          "return_pct": -2.6273,
+          "max_drawdown_pct": -3.5617,
           "trades": 15,
-          "sharpe": -0.54511,
+          "sharpe": -0.54805,
           "win_rate_pct": 20.0,
-          "benchmark_20pct_passive_pct": 0.5798,
-          "excess_vs_passive_pct": -3.2113
+          "benchmark_20pct_passive_pct": -1.265,
+          "excess_vs_passive_pct": -1.3623
         },
         "stress": {
           "2": {
-            "return_pct": -3.3961,
-            "max_drawdown_pct": -4.338,
+            "return_pct": -3.392,
+            "max_drawdown_pct": -4.1836,
             "trades": 15,
-            "sharpe": -0.71652,
+            "sharpe": -0.72062,
             "win_rate_pct": 20.0,
-            "benchmark_20pct_passive_pct": 0.5798,
-            "excess_vs_passive_pct": -3.9759
+            "benchmark_20pct_passive_pct": -1.265,
+            "excess_vs_passive_pct": -2.127
           },
           "3": {
-            "return_pct": -4.1629,
-            "max_drawdown_pct": -4.9344,
+            "return_pct": -4.1588,
+            "max_drawdown_pct": -4.8096,
             "trades": 15,
-            "sharpe": -0.88228,
+            "sharpe": -0.88627,
             "win_rate_pct": 20.0,
-            "benchmark_20pct_passive_pct": 0.5798,
-            "excess_vs_passive_pct": -4.7427
+            "benchmark_20pct_passive_pct": -1.265,
+            "excess_vs_passive_pct": -2.8938
           },
           "5": {
-            "return_pct": -6.7913,
-            "max_drawdown_pct": -7.2241,
+            "return_pct": -6.7873,
+            "max_drawdown_pct": -7.1581,
             "trades": 16,
-            "sharpe": -1.4666,
+            "sharpe": -1.46984,
             "win_rate_pct": 18.75,
-            "benchmark_20pct_passive_pct": 0.5798,
-            "excess_vs_passive_pct": -7.3711
+            "benchmark_20pct_passive_pct": -1.265,
+            "excess_vs_passive_pct": -5.5223
           }
         },
         "gates": {
@@ -2337,23 +2337,23 @@
           "holdout_2x_cost_positive": false,
           "holdout_drawdown_below_15pct": true
         },
-        "selection_score": 1.08892
+        "selection_score": 1.49525
       },
       "status": "FAILED_ROBUSTNESS_GATES"
     },
     {
       "symbol": "CT=F",
       "category": "Bonos materias primas REIT",
-      "bars": 1955,
+      "bars": 1956,
       "first": "2018-01-02",
-      "last": "2026-11-23",
-      "ohlc_sha256": "037d442ea58c7d594a159df5795e4a08982a5f21e951ee8c7260a4a02e0d66bf",
+      "last": "2026-11-27",
+      "ohlc_sha256": "8b936433b2c6fe5ab8c25db1b2f0e1a5137a2aee5a29cb3f1a197c19fa83ba11",
       "periods": {
         "train_end": "2023-06-05",
         "validation_start": "2023-06-06",
         "validation_end": "2025-03-12",
         "holdout_start": "2025-03-13",
-        "last": "2026-11-23"
+        "last": "2026-11-27"
       },
       "candidates_tested": 12,
       "eligible_candidates": 9,
@@ -2395,38 +2395,38 @@
           "return_pct": -1.397,
           "max_drawdown_pct": -3.8147,
           "trades": 13,
-          "sharpe": -0.3165,
+          "sharpe": -0.3161,
           "win_rate_pct": 30.76923,
-          "benchmark_20pct_passive_pct": 3.3068,
-          "excess_vs_passive_pct": -4.7038
+          "benchmark_20pct_passive_pct": 4.371,
+          "excess_vs_passive_pct": -5.768
         },
         "stress": {
           "2": {
             "return_pct": -2.074,
             "max_drawdown_pct": -4.165,
             "trades": 13,
-            "sharpe": -0.47371,
+            "sharpe": -0.47311,
             "win_rate_pct": 30.76923,
-            "benchmark_20pct_passive_pct": 3.3068,
-            "excess_vs_passive_pct": -5.3808
+            "benchmark_20pct_passive_pct": 4.371,
+            "excess_vs_passive_pct": -6.4449
           },
           "3": {
             "return_pct": -1.9594,
             "max_drawdown_pct": -4.514,
             "trades": 13,
-            "sharpe": -0.4456,
+            "sharpe": -0.44503,
             "win_rate_pct": 30.76923,
-            "benchmark_20pct_passive_pct": 3.3068,
-            "excess_vs_passive_pct": -5.2662
+            "benchmark_20pct_passive_pct": 4.371,
+            "excess_vs_passive_pct": -6.3304
           },
           "5": {
             "return_pct": -3.3218,
             "max_drawdown_pct": -5.2078,
             "trades": 13,
-            "sharpe": -0.75474,
+            "sharpe": -0.75378,
             "win_rate_pct": 30.76923,
-            "benchmark_20pct_passive_pct": 3.3068,
-            "excess_vs_passive_pct": -6.6286
+            "benchmark_20pct_passive_pct": 4.371,
+            "excess_vs_passive_pct": -7.6928
           }
         },
         "gates": {
@@ -2446,16 +2446,16 @@
     {
       "symbol": "VZ",
       "category": "Acciones EEUU",
-      "bars": 2234,
+      "bars": 2238,
       "first": "2018-01-02",
-      "last": "2026-11-23",
-      "ohlc_sha256": "ca89963d0954badf1db5d3164b1ea30e0b74fe8c05d454d9be2b94e87b2d971c",
+      "last": "2026-11-27",
+      "ohlc_sha256": "6883f739e1de1eadb8f498fdc5ad8fdc17e73678d477c1bf6595e7551a2dc608",
       "periods": {
-        "train_end": "2023-05-02",
-        "validation_start": "2023-05-03",
-        "validation_end": "2025-02-12",
-        "holdout_start": "2025-02-13",
-        "last": "2026-11-23"
+        "train_end": "2023-05-03",
+        "validation_start": "2023-05-04",
+        "validation_end": "2025-02-14",
+        "holdout_start": "2025-02-18",
+        "last": "2026-11-27"
       },
       "candidates_tested": 12,
       "eligible_candidates": 9,
@@ -2477,58 +2477,58 @@
         },
         "train": {
           "return_pct": -1.5639,
-          "max_drawdown_pct": -5.4548,
+          "max_drawdown_pct": -5.4547,
           "trades": 46,
-          "sharpe": -0.25052,
+          "sharpe": -0.25033,
           "win_rate_pct": 28.26087,
-          "benchmark_20pct_passive_pct": -1.7415,
-          "excess_vs_passive_pct": 0.1776
+          "benchmark_20pct_passive_pct": -1.5913,
+          "excess_vs_passive_pct": 0.0274
         },
         "validation": {
           "return_pct": 2.672,
           "max_drawdown_pct": -1.1397,
           "trades": 19,
-          "sharpe": 0.81793,
+          "sharpe": 0.817,
           "win_rate_pct": 47.36842,
-          "benchmark_20pct_passive_pct": 4.0865,
-          "excess_vs_passive_pct": -1.4145
+          "benchmark_20pct_passive_pct": 4.7708,
+          "excess_vs_passive_pct": -2.0988
         },
         "holdout": {
-          "return_pct": -6.2646,
+          "return_pct": -5.8239,
           "max_drawdown_pct": -6.7471,
           "trades": 28,
-          "sharpe": -1.92257,
+          "sharpe": -1.76389,
           "win_rate_pct": 17.85714,
-          "benchmark_20pct_passive_pct": 5.3557,
-          "excess_vs_passive_pct": -11.6203
+          "benchmark_20pct_passive_pct": 5.85,
+          "excess_vs_passive_pct": -11.6739
         },
         "stress": {
           "2": {
-            "return_pct": -7.7729,
-            "max_drawdown_pct": -8.0144,
+            "return_pct": -7.34,
+            "max_drawdown_pct": -7.9754,
             "trades": 28,
-            "sharpe": -2.36268,
-            "win_rate_pct": 14.28571,
-            "benchmark_20pct_passive_pct": 5.3557,
-            "excess_vs_passive_pct": -13.1287
+            "sharpe": -2.20358,
+            "win_rate_pct": 17.85714,
+            "benchmark_20pct_passive_pct": 5.85,
+            "excess_vs_passive_pct": -13.1899
           },
           "3": {
-            "return_pct": -9.2565,
-            "max_drawdown_pct": -9.4027,
+            "return_pct": -8.8311,
+            "max_drawdown_pct": -9.321,
             "trades": 28,
-            "sharpe": -2.76909,
-            "win_rate_pct": 7.14286,
-            "benchmark_20pct_passive_pct": 5.3557,
-            "excess_vs_passive_pct": -14.6123
+            "sharpe": -2.612,
+            "win_rate_pct": 10.71429,
+            "benchmark_20pct_passive_pct": 5.85,
+            "excess_vs_passive_pct": -14.6811
           },
           "5": {
-            "return_pct": -12.1512,
-            "max_drawdown_pct": -12.186,
+            "return_pct": -11.7405,
+            "max_drawdown_pct": -12.054,
             "trades": 28,
-            "sharpe": -3.46839,
-            "win_rate_pct": 3.57143,
-            "benchmark_20pct_passive_pct": 5.3557,
-            "excess_vs_passive_pct": -17.507
+            "sharpe": -3.32208,
+            "win_rate_pct": 7.14286,
+            "benchmark_20pct_passive_pct": 5.85,
+            "excess_vs_passive_pct": -17.5905
           }
         },
         "gates": {
@@ -2541,7 +2541,7 @@
           "holdout_2x_cost_positive": false,
           "holdout_drawdown_below_15pct": true
         },
-        "selection_score": -1.94156
+        "selection_score": -2.6484
       },
       "status": "FAILED_ROBUSTNESS_GATES"
     }
